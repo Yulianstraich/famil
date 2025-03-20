@@ -53,6 +53,27 @@ body {
     margin-top: 10px;
 }
 
+.link-wrapper {
+    margin-top: 15px;
+}
+
+.forgot-link, .token-link, .create-account-link {
+    color: #163d81;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #084896;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 .step {
     height: 5px;
     width: 25%;
@@ -84,6 +105,21 @@ h2 {
     margin-bottom: 20px;
 }
 
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: none;
+    box-sizing: border-box;
+    max-width: 90%;
+    border-bottom: 2px solid #084897;
+    border-radius: 0px;
+    outline: 0px;
+    text-align: center;
+    color: #084897;
+    font-weight: 600;
+}
+
 .input-wrapper {
     margin-bottom: 20px;
     padding: 0; /* Asegurarse de que no haya padding adicional */
@@ -92,6 +128,7 @@ h2 {
 }
 
 input {
+    width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
