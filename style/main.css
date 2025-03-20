@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: none;
+    box-sizing: border-box;
+    max-width: 90%;
+    border-bottom: 2px solid #084897;
+    border-radius: 0px;
+    outline: 0px;
+    text-align: center;
+    color: #084897;
+    font-weight: 600;
+}
+
+
+.login-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.logo {
+    max-width: 220px; /* Ajusta el tamaño del logo */
+    margin-bottom: 0px;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.password-field img {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20px;
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #084896; /* Color inicial */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.link-wrapper {
+    margin-top: 15px;
+}
+
+.forgot-link, .token-link, .create-account-link {
+    color: #163d81;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.footer {
+    background-color: #013b53;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 50px; /* Aumenta el margen superior para que esté más abajo */
+}
+
+
+.padlock-icon {
+    width: 20px;
+    margin-right: 5px;
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+}
+/* ... (estilos previos) ... */
+
+.input-label {
+    color: #000; /* Color azul oscuro para los títulos de los campos */
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-align: center; /* Alinea el texto a la izquierda */
+
+}
+
+/* ... (resto de los estilos) ... */

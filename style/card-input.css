@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Un fondo semi-transparente para oscurecer el contenido de fondo */
+    z-index: 999; /* Asegura que el loader esté en la parte superior de todo */
+}
+
+.loader {
+    text-align: center;
+    font-size: 20px;
+    color: #084896;
+}
+
+.loader img {
+    max-width: 100%; /* Hace que la imagen sea responsive */
+    display: block; /* Elimina el espacio adicional debajo de la imagen */
+    margin: 0 auto; /* Centra horizontalmente la imagen dentro del contenedor */
+    max-height: 200px; /* Cambia el tamaño máximo de la imagen */
+}
+.header {
+    background-color: #084896;
+    height: 60px;
+}
+
+.steps-container {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 10px 0;
+}
+
+.steps-container h2 {
+    margin: 0;
+    color: #084896;
+    font-size: 20px;
+}
+
+.steps-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.step {
+    height: 5px;
+    width: 25%;
+    background-color: #bbb;
+    margin: 0 2px;
+}
+
+.step.active {
+    background-color: #ffc900;
+}
+.form-container h3 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #084896;
+}
+.form-container {
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-wrapper {
+    margin-bottom: 20px;
+    padding: 0; /* Asegurarse de que no haya padding adicional */
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.button-group {
+    display: center;
+    justify-content: space-between;
+}
+
+.continue-btn {
+    background-color: #ffc900;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: transparent;
+    color: #bbb;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+

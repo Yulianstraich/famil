@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: #013b53;
+    height: 60px;
+}
+
+.steps-container {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 10px 0;
+}
+
+.steps-container h2 {
+    margin: 0;
+    color: #013b53;
+    font-size: 20px;
+}
+
+.steps-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.step {
+    height: 5px;
+    width: 25%;
+    background-color: #bbb;
+    margin: 0 2px;
+}
+
+.step.active {
+    background-color: #5ea5c3;
+}
+
+.form-container {
+    max-width: 450px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.form-container h3 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+.input-wrapper {
+    margin-bottom: 20px;
+}
+
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.continue-btn, .cancel-btn {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.continue-btn {
+    background-color: #bbb;
+    color: white;
+}
+
+.continue-btn:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+.cancel-btn {
+    background-color: transparent;
+    color: #bbb;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .steps-container h2 {
+        font-size: 18px;
+    }
+
+    .form-container h3 {
+        font-size: 16px;
+    }
+}
