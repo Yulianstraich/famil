@@ -1,0 +1,1155 @@
+﻿var REGEX_DOCUMENT_NUMBER = "^[a-zA-Z\b]|[0-9\b]|[-]+$";
+
+moment.locale('es');
+var contenidoSaludo="";
+var contenidoLogin="";
+var originAnalytics="";
+var ownCheck="";
+$(document).ready(function(){
+	resizeHeader();
+	setInterval(fnCheckHoraSaludo,300000);
+	fnCheckHoraSaludo();
+	
+	if(window.innerHeight > 600 && window.innerHeight < 840){
+		$('div#navbar').css("max-height",window.innerHeight - 222);
+	}
+		
+	
+	
+	
+	/*if (typeof history.pushState === "function") {
+		 history.pushState("newstate", null, null);
+        window.onpopstate = function () { 
+       	history.pushState('newstate', null, null);        	
+           window.location = appname + "/";
+				$.ajax({
+		    		url : appname + '/verifySession',		
+		    		type : 'GET',		
+		    		error: function(){        			  
+	    			window.location = appname+"/login";	
+	    		}
+       	});
+          
+       };
+   }	*/
+
+
+});
+
+$(document).on('dblclick','.img-a-toda-hora', function(){
+    // $('#numberRuc').val("80002740-0");
+	if ($('#div-empresas').hasClass('enty-select')){
+		if ($('#userName').val()=="1799204"){
+			$('#userName').val("980527");
+		}else if($('#userName').val()=="980527"){
+			$('#userName').val("1799204");
+		}else {
+			$('#userName').val("1799204");
+		}
+		$('#password').val("ABC12345");
+		$('#numberRuc').val("80089752-8");
+	}else{
+		//$('#userName').val("5683134");
+		$('#userName').val("1033390");
+		//$('#userName').val("1785858");
+		$('#password').val("ABC12345");
+	}
+
+
+});
+
+$(window).resize(function() {
+	resizeHeader();
+});
+
+function generateDeviceId(){
+	var options = {
+			excludeLanguage: true,
+			excludeColorDepth: true,
+			//excludeDeviceMemory: true,//
+			excludePixelRatio: true,
+			excludeHardwareConcurrency: true,
+			excludeScreenResolution: true,			
+			excludeAvailableScreenResolution: true,	
+			excludeTimezoneOffset: true,
+			excludeSessionStorage: true,
+			excludeLocalStorage: true,
+			excludeIndexedDB: true,
+			excludeOpenDatabase: true,
+			excludeCpuClass: true,//
+			//excludePlatform: true,		
+			excludeDoNotTrack: true,
+			excludePlugins: true,		
+			excludeAdBlock: true,
+			excludeHasLiedLanguages: true,
+			excludeHasLiedResolution: true,	
+			excludeHasLiedOs: true,
+			excludeHasLiedBrowser: true,
+			//excludeTouchSupport: true,
+			excludeJsFonts: true,			
+			excludeWebGL: true,
+			excludeWebGLVendor: true
+		};	
+	 new Fingerprint2(options).get(function(result, components){
+		 $("#deviceId").val(result);	
+		 		
+		 
+		 var parser = new UAParser();
+		 	
+		 var result = parser.getResult();
+		/* console.log(result);*/
+		 		
+		 $('#soName').val(result.os.name);		
+		 $('#vendorName').val(result.browser.name);
+		 $('#vendorVersion').val(result.browser.version);		 	
+	});
+	
+	
+}
+
+function activeHeader(selected){
+
+	var allElements = ["homePage", "acountPage", "cardPage", "transferPage","exchangePage", "loansPage", "cdaPage", "paymentsPage","moneyOrderPage", "minutePage", "notificationPage","extractsPage","vouchersPage", "requestPage","configPage", "optionPage", "recorderPage","solicitudePage","transactionPage","aliasPage"];
+
+	for (var element in allElements){
+		if (allElements[element] == selected){
+			$("#"+allElements[element]).addClass("active");
+		} else {
+			$("#"+allElements[element]).removeClass("active");
+		}
+	}
+}
+
+var fnAlertMessage = function(elem,text,timeout){
+	console.log("---> fnAlertMessage here!");
+	console.log(elem);
+	console.log(text);
+	console.log(timeout);
+	/*if($(elem).hasClass('content-msj-warning')){
+		$(elem).css({'display':'block'});
+	}*/
+	$(elem).html('<div class="alert alert-danger">'+text+'</div>');
+	
+	$(elem).slideDown(200);	
+	if(timeout > 0){
+		window.setTimeout(function(){
+			$(elem).slideUp(200, function(){
+				$(elem).html('');
+			});
+			}, timeout);
+		//window.setTimeout(function(){ $(elem).html(''); },timeout);
+	}
+	
+}
+/*
+ * Saludo en el header.jsp
+ */
+var fnCheckHoraSaludo = function(){
+	
+	var target = $('#greetingTime');
+	var targetMovil = $('#greetingTime2');
+	var split_afternoon = 12 //24hr time to split the afternoon
+	var split_evening = 17 //24hr time to split the evening
+	var currentHour = parseFloat(moment().format("HH"));
+	
+	if(currentHour >= split_afternoon && currentHour <= split_evening) {
+		g = "Hola";//Buenas tardes- Hola
+	} else if(currentHour >= split_evening) {
+		g = "Hola";//Buenas noches - Hola
+	} else {
+		g = "Hola";//Buenos d\u00edas - Hola 
+	}
+	target.html(g);
+	targetMovil.html(g);
+}
+
+/*var fnTimeoutLogout = function(){
+	setTimeout(fnRedirect, 600000);
+}
+
+var fnRedirect = function(){
+	window.location.href = appname + "/home";
+}*/
+
+var fnHomeAjaxErrorHandler = function (request, status, error, idAcount) {
+//	console.log('-------------------');
+//	console.log(error);
+//	console.log(status);
+//	console.log(request);
+//	console.log('-------------------');
+
+	$('html, body').animate( {scrollTop : 0}, 800 );
+	//$('#step-container .loading').fadeIn("fast");
+	if($("#step-container .loading").length >= 0 ){
+		$('#step-container .loading').fadeOut("fast");
+	}
+	
+	if (error == 'Forbidden') {	// forbidden
+		window.location = appname + "/";
+	}	
+	$('#newLoading').css('display','none');
+	var msg = decodeString('Ocurrió un error al intentar procesar la petición, por favor intentelo de nuevo mas tarde!');
+	if (status == "timeout") {
+		msg = decodeString('Tiempo de espera agotado para la operación, vuelva a intentar mas tarde por favor');	
+	}
+/*
+	console.log(request);
+*/
+	if(typeof request!=='undefined' && request!=null){
+		try {
+			var errorBody = $.parseJSON(request.responseText);
+			if(errorBody.useApiMessage){
+				msg = errorBody.message;
+			}
+			if(errorBody.code == "ERROR_PLUGIN_TIMEOUT_PAGO_REINTENTAR"){
+				$('#btnSend').prop('disabled', true);
+			}
+		}
+		catch(err) {
+		    console.log(err);
+		}
+		showErrorMessage(msg);
+
+//		$("#error-message").text(msg);		
+//		$("#main-error-message").slideDown(200);		
+//		setTimeout(function(){
+//			$("#main-error-message").slideUp(200);
+//		},5000);
+	}
+	
+	if(idAcount != undefined){
+	    $('#'+idAcount+' .loading').css('display','none');
+		$('#'+idAcount+' .msgAlert').html(
+	        '<div class="tableEmtyMessage familiar-alerta" >'+
+	        	'<h3>Aviso</h3>'+
+	        	'<div class="row">'+
+					'<div class="col-xs-12 col-sm-12">'+
+						'<p>'+msg+'</p>'+
+					'</div>'+
+				'</div>'+
+			'</div>'+
+		'</div>').show();
+		setTimeout(function(){
+			$('#'+idAcount+' .msgAlert').html('').css('display','none');
+		},5000);
+	}else{
+//		alert(msg);
+	}
+	 
+}
+
+var showErrorMessage = function(msg, title, timeOut){
+	
+	console.log("showErrorMessage: >>> "+ msg);
+
+	if (msg == "Valor del token ingresado inválido."){
+		$('.confirm-transaction').prop('disabled', false);
+	}
+
+	if(typeof title === 'undefined'){
+		title = 'Aviso: ';
+	}
+	
+	if (msg == null || msg.length <= 1){
+		msg = decodeString("Ocurrió un error inesperado. Intente de nuevo en un momento.");
+	}
+	$("#error-type").text(title);
+	$("#error-message").html(msg);
+
+	$('html,body').animate({scrollTop:0});
+
+	$("#main-error-message").slideDown(200);		
+	setTimeout(function(){
+		$("#main-error-message").slideUp(200);
+	},timeOut==undefined?5000:timeOut);
+	
+
+}
+
+function showAjaxError(defaultMessage, error) {
+
+    if(error.code == 'a1100' || error.code == 'g1011'){
+        window.location = appname + "/login";
+    }
+    else if(error.useApiMessage)
+        showErrorMessage(error.message);
+    else if(defaultMessage !== undefined && defaultMessage!== '')
+        showErrorMessage(defaultMessage);
+}
+
+
+var fnAccountAjaxErrorHandler = function (request, status, error, idAcount) {
+	var msg = decodeString('Ocurrió un error al intentar procesar la petición, por favor intentelo de nuevo mas tarde!');
+	if (status == "timeout") {
+		msg = decodeString('Tiempo de espera agotado para la operación, vuelva a intentar mas tarde por favor');	
+	}
+	if(idAcount != undefined){
+		$('#cuenta-'+idAcount+' .loading').css('display','none');
+		$('#carousel-'+idAcount+' img').remove();
+		$('#cuenta-'+idAcount+' .msgAlert').html(
+	        '<div class="tableEmtyMessage familiar-alerta" >'+
+	        	'<h3>Aviso</h3>'+
+	        	'<div class="row">'+
+					'<div class="col-xs-12 col-sm-12">'+
+					'<p>'+msg+'</p>'+
+					'</div>'+
+				'</div>'+
+			'</div>'+
+		'</div>').show();
+		setTimeout(function(){
+			$('#cuenta-'+idAcount+' .msgAlert').html('').css('display','none');
+			$('#cuenta-'+idAcount+' .caroufredsel_wrapper').css('opacity','1');
+		},5000);
+	}else{
+//		alert(msg);
+	}
+    
+}
+
+var jump = function(e){
+	let target;
+   if(e){
+       target = e;
+   }else{
+       target = location.hash;
+   }
+   /*jQuery('html,body').animate( {
+       scrollTop: (jQuery(target).offset().top) - 220
+   },1000,function() {
+       setTimeout(function(){$(target).removeClass('highlightCajaProducto');},2000);
+   });*/
+
+}
+
+var triggerJump = function(){
+	if(location.hash){
+		var target = location.hash;
+		$(target+' .mas-movimientos').trigger('click');
+	}
+}
+
+var resizeHeader = function(){
+	$('.header-content').css({ width:$('.main-content').outerWidth()+'px' });
+}
+
+
+
+/************************************************************************
+ *  
+ *  Se actualiza el titulo del mes al cual pertenece los movimientos 
+ *  mostrados
+ *  
+ ************************************************************************/
+function setMonthPrev(monthValue, elementId){
+	var date = moment();
+
+   date.subtract(monthValue,'months');
+
+    var monthNames = [
+                      "Enero", "Febrero", "Marzo",
+                      "Abril", "Mayo", "Junio", "Julio",
+                      "Agosto", "Septiembre", "Octubre",
+                      "Noviembre", "Diciembre"
+                    ];
+    var monthIndex = date.format('M') -1;
+    $("#month-show-"+elementId).text(monthNames[monthIndex]+ " "+ date.format('YYYY'));
+};
+
+/************************************************************************
+ *  
+ *  Inicializa el elemento carouFledSel
+ *  
+ ************************************************************************/
+function initCarouFed(acount){
+	$('#carousel-'+acount).carouFredSel({
+		auto: false,
+		mousewheel: true,
+		responsive: true,
+		width: '100%',
+		height: 'variable',
+		swipe: {
+			onMouse: true,
+			onTouch: true
+		},
+		scroll: {
+			items: 1,
+			width:'100%',
+			fx: 'crossfade',
+			onAfter:function(data){
+				if(data.items.visible.find('.familiar-alerta').length > 0){
+					$('#cuenta-'+acount+' .opt-bottom').css('display','none');
+				}else{
+					$('#cuenta-'+acount+' .opt-bottom').show('fast');
+					if(data.items.visible.find('.full-loaded').length > 0){
+						$('#cuenta-'+acount+" .load-more").hide();
+						$('#cuenta-'+acount+" .load-all").hide();
+					}else{
+						$('#cuenta-'+acount+" .load-more").show();
+						$('#cuenta-'+acount+" .load-all").show();
+					}
+				}
+			}
+		},
+		items: {
+			height:'variable'
+		}
+	});
+};
+
+/************************************************************************
+ *  
+ *  Seteo de parametros para el formato de valores segun la moneda (NUMERAL)
+ *  
+ ************************************************************************/
+var getMoneda = function (currencySimbol){
+	var result = {};
+	switch(currencySimbol){
+		case 'Gs'	: result.simbolo = "Gs."; result.formato = "0,0"; numeral.language('es'); break;
+		default		: result.simbolo = currencySimbol; result.formato = "0,0.00"; numeral.language('es'); break;
+	}
+	return result;
+}
+
+/************************************************************************
+ *  
+ *  Codificación / Decodificación de caracteres
+ *  
+ ************************************************************************/
+
+var decodeString = function(str){
+	return Utf8.decode(Utf8.encode(str));
+}
+
+var Utf8 = {
+
+    // public method for url encoding
+    encode : function (string) {
+        string = string.replace(/\r\n/g,"\n");
+        var utftext = "";
+        for (var n = 0; n < string.length; n++) {
+            var c = string.charCodeAt(n);
+            if (c < 128) {
+                utftext += String.fromCharCode(c);
+            } else if((c > 127) && (c < 2048)) {
+                utftext += String.fromCharCode((c >> 6) | 192);
+                utftext += String.fromCharCode((c & 63) | 128);
+            } else {
+                utftext += String.fromCharCode((c >> 12) | 224);
+                utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+        }
+        return utftext;
+    },
+
+    // public method for url decoding
+    decode : function (utftext) {
+        var string = "";
+        var i = 0;
+        var c = c1 = c2 = 0;
+        while ( i < utftext.length ) {
+            c = utftext.charCodeAt(i);
+            if (c < 128) {
+                string += String.fromCharCode(c);
+                i++;
+            } else if((c > 191) && (c < 224)) {
+                c2 = utftext.charCodeAt(i+1);
+                string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                i += 2;
+            } else {
+                c2 = utftext.charCodeAt(i+1);
+                c3 = utftext.charCodeAt(i+2);
+                string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                i += 3;
+            }
+        }
+        return string;
+    }
+
+}
+
+/************************************************************************
+ *  
+ *	Llamada ajax para generar reportes de movimientos de un mes  
+ *  
+ ************************************************************************/
+function getMovementPdf(idElement, typeAccount, dateFrom, dateTo) {
+	idSucursal = $('#suc-'+idElement).val();
+	nroOperacion = $('#op-'+idElement).val();	
+	numeroMeses=$('#nro_mes_'+idElement).val();
+
+    var urlToSend;
+    if(dateFrom !== undefined && dateTo !== undefined)
+        urlToSend= appname + "/report/movements/extracto?idSucursal="+idSucursal+"&nroOperacion="+nroOperacion+
+								"&verbose=true&numeroMeses="+numeroMeses+"&typeAccount="+typeAccount+"&dateFrom="+dateFrom+"&dateTo="+dateTo;//typeAccount
+    else
+        urlToSend= appname + "/report/movements/extracto?idSucursal="+idSucursal+"&nroOperacion="+nroOperacion+
+            "&verbose=true&numeroMeses="+numeroMeses+"&typeAccount="+typeAccount;//typeAccount
+
+	$('.container .loading').css('display','block');	
+	
+    var req = new XMLHttpRequest();
+    req.open("GET", urlToSend, true);
+    req.responseType = "blob";
+    req.onload = function (event) {
+    	
+    	if(req.status == 500){
+    		
+    		var msg = "No se ha podido descargar el extracto";
+    		//para mostrar el mensaje de error
+    		showErrorMessage(msg);
+          	console.log("ERROR al hacer onload en getMovementPdf");
+          	$('.container .loading').css('display','none');
+          	
+        } else {
+        	  var blob = req.response;
+
+              if(typeAccount=='account')
+            	  fileName = req.getResponseHeader("Filename");
+              else if(typeAccount=='loan')
+            	  fileName = 'extracto-prestamo.pdf';
+              else if(typeAccount=='card')
+            	  fileName = 'extracto-tarjeta.pdf';
+              else 
+            	  fileName = 'extracto-cda.pdf';
+              
+              dowloadFile(blob,fileName, 'pdf');
+              
+              $('.container .loading').css('display','none');
+          }
+      
+    };
+
+    req.send();
+}
+
+function getMovementXLS(idElement,typeAccount, dateFrom, dateTo) {
+    idSucursal = $('#suc-'+idElement).val();
+    nroOperacion = $('#op-'+idElement).val();
+    numeroMeses=$('#nro_mes_'+idElement).val();
+
+	var urlToSend;
+	if(dateFrom !== undefined && dateTo !== undefined)
+		urlToSend = appname + "/report/movements/extracto-xls?idSucursal="+idSucursal+"&nroOperacion="+nroOperacion+
+			"&verbose=true&numeroMeses="+numeroMeses+"&typeAccount="+typeAccount+"&dateFrom="+dateFrom+"&dateTo="+dateTo;
+	else
+        urlToSend = appname + "/report/movements/extracto-xls?idSucursal="+idSucursal+"&nroOperacion="+nroOperacion+
+        "&verbose=true&numeroMeses="+numeroMeses+"&typeAccount="+typeAccount;
+
+    $('.container .loading').css('display','block');
+
+    var req = new XMLHttpRequest();
+    req.open("GET", urlToSend, true);
+    req.responseType = "blob";
+    req.onload = function (event) {
+    	
+    	if(req.status == 500){
+    		
+    		var msg = "No se ha podido descargar el extracto";
+    		//para mostrar el mensaje de error
+    		showErrorMessage(msg);
+          	console.log("ERROR al hacer onload en getMovementXLS");
+          	$('.container .loading').css('display','none');
+          	
+        } else {
+        	// var blob = req.response;
+            var blob = new Blob([req.response],{type: 'text/plain'});
+            if(typeAccount=='account')
+                fileName = req.getResponseHeader("Filename");
+            else if(typeAccount=='loan')
+                fileName = 'extracto-prestamo.xls';
+            else if(typeAccount=='card')
+                fileName = 'extracto-tarjeta.xls';
+            else
+                fileName = 'extracto.xls';
+
+            dowloadFile(blob,fileName, 'xls');
+
+            $('.container .loading').css('display','none');
+        }
+        
+    };
+
+    req.send();
+}
+
+function getMovementTXT(idElement,typeAccount, dateFrom, dateTo) {
+	idSucursal = $('#suc-'+idElement).val();
+	nroOperacion = $('#op-'+idElement).val();	
+	numeroMeses=$('#nro_mes_'+idElement).val();
+
+	var urlToSend;
+	if(dateFrom !== undefined && dateTo !== undefined)
+		urlToSend = appname + "/report/movements/extracto-txt?idSucursal="+idSucursal+"&nroOperacion="+nroOperacion+
+			"&verbose=true&numeroMeses="+numeroMeses+"&typeAccount="+typeAccount+"&dateFrom="+dateFrom+"&dateTo="+dateTo;
+	else
+		urlToSend = appname + "/report/movements/extracto-txt?idSucursal="+idSucursal+"&nroOperacion="+nroOperacion+
+								"&verbose=true&numeroMeses="+numeroMeses+"&typeAccount="+typeAccount;
+
+	$('.container .loading').css('display','block');	
+	
+    var req = new XMLHttpRequest();
+    req.open("GET", urlToSend, true);
+    req.responseType = "blob";
+    req.onload = function (event) {
+    	
+    	if(req.status == 500){
+    		
+    		var msg = "No se ha podido descargar el extracto";
+    		//para mostrar el mensaje de error
+    		showErrorMessage(msg);
+          	console.log("ERROR al hacer onload en getMovementTXT");
+          	$('.container .loading').css('display','none');
+          	
+        } else {
+        	// var blob = req.response;     
+        	var blob = new Blob([req.response],{type: 'text/plain'});
+          if(typeAccount=='account')
+        	  fileName = req.getResponseHeader("Filename");
+          else if(typeAccount=='loan')
+        	  fileName = 'extracto-prestamo.txt';
+          else if(typeAccount=='card')
+        	  fileName = 'extracto-tarjeta.txt';
+          else 
+        	  fileName = 'extracto-cda.txt';
+          
+          dowloadFile(blob,fileName, 'txt');
+          $('.container .loading').css('display','none');
+        }
+     
+    };
+
+    req.send();
+}
+
+function getTransactionVoucher(idTx, voucherFormat) {
+
+    $('.container .loading').css('display','block');
+    $('#step-container .loading').fadeIn("fast");
+
+    var urlToSend = appname + "/transaction/voucher?idTx="+idTx+"&voucherFormat="+voucherFormat;
+
+    var req = new XMLHttpRequest();
+    req.open("GET", urlToSend, true);
+    req.responseType = "blob";
+    req.onload = function (event) {
+
+        if(req.status == 500){
+
+            var msg = "No se ha podido descargar el comprobante";
+            //para mostrar el mensaje de error
+            showErrorMessage(msg);
+            console.log("ERROR al hacer onload en getTransactionVoucher");
+            $('.container .loading').css('display','none');
+
+        } else {
+            var blob = req.response;
+
+            var fileName = req.getResponseHeader("Filename");
+
+            dowloadFile(blob,fileName, voucherFormat);
+
+            $('.container .loading').css('display','none');
+            $('#step-container .loading').hide();
+        }
+
+    };
+    req.send();
+}
+
+//Descarga o abre segun el tipo
+	function dowloadFile(blob, fileName, tipo){
+		var typeAplication;
+	    
+	    switch(tipo) {
+	        case 'txt':
+	            typeAplication = "text/plain";
+	            break;
+	        case 'xls':
+	            typeAplication = "application/vnd.ms-excel";
+	            break;
+	        case 'pdf':
+	            typeAplication = "application/pdf";
+	            break;
+	        case 'zip':
+	            typeAplication = "application/zip";
+	            break;
+	    }
+	    
+	    if(tipo=='pdf'){//si es pdf, se muestra nada mas
+	    	printFile(blob, fileName);
+	    }else{
+	    
+		  if (navigator.appVersion.toString().indexOf('.NET') > 0){
+			  var options = {
+		                type: typeAplication
+		        };
+			  var file = new Blob([blob], options);
+			  
+		      window.navigator.msSaveBlob(file, fileName); 
+		  }
+		  else{
+			  var link=document.createElement('a');
+			
+		      link.href = window.URL.createObjectURL(blob);          
+		      link.download = fileName;
+		      document.body.appendChild(link);
+		      link.click();
+		  }
+	    }
+	}
+	
+	function printFile(blob, fileName){
+	
+	    if (navigator.appVersion.toString().indexOf('.NET') > 0)
+	        window.navigator.msSaveOrOpenBlob(blob, fileName); 
+	    else{
+	  	  	var link=document.createElement('a');
+            document.body.appendChild(link);
+			link.download=fileName;
+	        var url = window.URL.createObjectURL(blob);
+            link.target = "_blank";
+	        link.href = url;
+	        link.click();
+	    }
+	}
+
+	// ELIMINAR CUENTAS GUARDADAS
+	
+	function deleteAccountSaved(accountId, isSIPAP){		
+		console.log("id: "+accountId);
+		var row = $("#content-"+accountId);
+		
+		$('#loding2').css('display','block');
+		var ajx = $.ajax({
+			beforeSend: function (request) {
+				request.setRequestHeader($("meta[name='_csrf_header']").attr("content"), $("meta[name='_csrf']").attr("content"));
+			},
+			url 	: appname + '/account/saved/delete',
+			data 	: {
+				'account-id': accountId
+			},
+			type 	: 'POST',
+			success : function(result) {
+				row.remove();
+				if(isSIPAP)
+					updateListAccountSaved(accountId);				
+			},			
+			error: fnHomeAjaxErrorHandler
+		});
+		$("#closeModal").trigger('click');
+	}
+	
+	function updateListAccountSaved(accountId){				
+		 $.ajax({
+			 beforeSend: function (request) {
+				 request.setRequestHeader($("meta[name='_csrf_header']").attr("content"), $("meta[name='_csrf']").attr("content"));
+			 },
+			url 	: appname + '/transfers/sipap/update-saved-accounts',
+			data 	: {
+				'account-id':   accountId,
+				'instancia-id': $('#instancia-id').val()				
+			},
+			type 	: 'POST',
+			success : function(result, status, xhr) {
+				console.log('Lista actualizada');
+				$('#modal-body-account-save').html(result);
+				$('#loding2').css('display','none');
+			},			
+			error: fnHomeAjaxErrorHandler
+		});
+	}
+	
+		function editAccountSaved(accountId, dataArray, type){		
+						
+			$('#loding2').css('display','block');
+			var ajx = $.ajax({
+				beforeSend: function (request) {
+					request.setRequestHeader($("meta[name='_csrf_header']").attr("content"), $("meta[name='_csrf']").attr("content"));
+				},
+				url 	: appname + '/account/saved/edit',
+				data 	: dataArray,
+				type 	: 'POST',
+				success : function(result) {
+					
+					var account = $.parseJSON(result);	
+/*
+					console.log(account);
+*/
+
+					var idParent = "#content-"+ accountId;
+										
+					$(idParent+' #alias-saved').html(account.alias);
+					$(idParent+' #cuenta-saved').html(account.additionalInfo.cuenta_destino);
+					
+					$(idParent+' #codigo_banco').val(account.additionalInfo.codigo_banco);
+					$(idParent+' #codigo_tipo_documento').val(account.additionalInfo.codigo_tipo_documento);
+					$(idParent+' #aliasCuenta').val(account.alias);
+				    $(idParent+' #cuenta_destino').val(account.additionalInfo.cuenta_destino);
+					$(idParent+' #nombre_beneficiario').val(account.additionalInfo.nombre_beneficiario);
+					$(idParent+' #nro_documento').val(account.additionalInfo.nro_documento);
+					$(idParent+' #info_adicional').val(account.additionalInfo.info_adicional);
+					
+					if(type == 'SIPAP')
+						$('#modalEditSipap').modal('toggle');
+					else
+						$('#modalEditOthers').modal('toggle');
+				},			
+				error: fnHomeAjaxErrorHandler
+			});
+			
+		};
+	
+	var goToIntenationalTransfer = function(nroCuenta){		
+		$('#newLoading').css('display','block');
+		$('html, body').animate( {scrollTop : 0}, 800 );
+		$.ajax({
+			type:"GET",
+			url: appname+ "/transfers/international/init",
+			data: { 
+				'nroCuenta': nroCuenta
+			},
+			success : function(data, status, xhr) {
+				
+				$("#content-home").html(data);
+				$('#newLoading').css('display','none');
+			},
+				error: fnHomeAjaxErrorHandler
+		});
+	};
+		
+	var goToNotification = function(nroCuenta){		
+		$('#newLoading').css('display','block');
+		$('html, body').animate( {scrollTop : 0}, 800 );
+		$.ajax({
+			type:"GET",
+			url: appname+ "/debit-card/notify/init",
+			data: { 
+				'nroCuenta': nroCuenta
+			},
+			success : function(data, status, xhr) {
+				
+				$("#content-home").html(data);
+				$('#newLoading').css('display','none');
+			},
+				error: fnHomeAjaxErrorHandler
+		});
+	};
+	
+	var goToConfigurationTC = function(nroSucOperacion){		
+		$('#newLoading').css('display','block');
+		
+		$('html, body').animate( {scrollTop : 0}, 800 );
+		$.ajax({
+			type:"GET",
+			url: appname+ "/card/config/init",
+			data: { 
+				'nroSucOperacion': nroSucOperacion
+			},
+			success : function(data, status, xhr) {	
+				$("#content-home").html(data);
+				$('#newLoading').css('display','none');
+			},
+				error: fnHomeAjaxErrorHandler
+		});
+	};
+
+	function getFechaHoy(){
+		
+		var hoy = new Date();
+		var dd = hoy.getDate();
+		var mm = hoy.getMonth()+1; //hoy es 0!
+		var yyyy = hoy.getFullYear();
+
+		if(dd < 10) {
+		    dd='0'+dd
+		} 
+
+		if(mm < 10) {
+		    mm='0'+mm
+		} 
+
+		return dd+'/'+mm+'/'+yyyy;
+	}
+	
+	function getMesAtras(){
+		
+		var hoy = new Date();
+		var dd = hoy.getDate();
+		var mm = hoy.getMonth();
+		var yyyy = hoy.getFullYear();
+
+		if(dd < 10) {
+		    dd='0'+dd
+		} 
+
+		if(mm < 10) {
+		    mm='0'+mm
+		} 
+
+		return dd+'/'+mm+'/'+yyyy;
+	}
+
+    function getLastDayOfMonth(Year, Month)
+    {
+        return(new Date((new Date(Year, Month+1,1))-1)).getDate();
+    }
+
+	var timeSession;
+	
+	  function inicioTimerSession(sessionDowntime) { 
+		  timeSession = setTimeout(function() { 
+		    $(document).ready(function(e) {
+		    	window.location = appname+"/logout?mensaje=SessionExpirada";		 
+		    });
+			},sessionDowntime);//60000 1 min
+		}
+	  
+		
+		function resetTimerSession(sessionDowntime) {//reset Timer
+		  clearTimeout(timeSession);
+		  timeSession = setTimeout(function() { 
+		    $(document).ready(function(e) {
+		    	window.location = appname+"/logout?mensaje=SessionExpirada";		  
+		    });
+			},sessionDowntime);//fin timeout
+		}
+		
+	function calcularMontoCambio(montoCambiar, cotizacion, monedaSalida, elementoDestino){			
+		console.log("calcularMontoCambio");
+		 if(monedaSalida == 'PYG'){
+			montoCambiar = parseFloat(montoCambiar.replace(/\./g,'').replace(',','.'));			
+			if(montoCambiar == 0 || isNaN(montoCambiar)){
+				if($(elementoDestino).is("input"))
+					elementoDestino.val("");
+				else
+					elementoDestino.html("0.00 Gs.");
+			}
+
+			else{
+				if($(elementoDestino).is("input"))
+					elementoDestino.val((montoCambiar * cotizacion).toMoney(0, ",", "."));
+				else
+					elementoDestino.html((montoCambiar * cotizacion).toMoney(0, ",", ".") +" Gs." );
+				return (montoCambiar * cotizacion).toMoney(0, ",", ".");
+			}				
+		}
+		else if(monedaSalida == 'USD'){
+			montoCambiar = parseInt(montoCambiar.replace(/\./g,''));			
+			if(montoCambiar == 0 || isNaN(montoCambiar)){
+				if($(elementoDestino).is("input"))
+					elementoDestino.val("");
+				else
+					elementoDestino.html("0,00 USD");
+			}
+
+			else{
+				if($(elementoDestino).is("input"))
+					elementoDestino.val((montoCambiar / cotizacion).toMoney(2, ",", "."));
+				else
+                	elementoDestino.html((montoCambiar / cotizacion).toMoney(2, ",", ".") +" USD");
+                return (montoCambiar / cotizacion).toMoney(8, ",", ".");
+			}
+
+		}
+	}
+
+
+function encrypt(plaintext) {
+    var iterationCount = 1000;
+    var keySize = 128;
+    var passphrase = '72357538782F4125442A472D4B615064';
+
+    var four = CryptoJS.lib.WordArray.random(keySize / 8).toString(CryptoJS.enc.Hex);
+    var salt = CryptoJS.lib.WordArray.random(keySize / 8).toString(CryptoJS.enc.Hex);//.toString(CryptoJS.enc.Hex);
+    var aesUtil = new AesUtil(keySize, iterationCount);
+    var cipherText = aesUtil.encrypt(salt, four, passphrase, plaintext);
+
+    var dataEncrypt = {
+        four: four,
+        salt: salt,
+        cipherText: cipherText
+    };
+
+    return dataEncrypt;
+}
+
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [day, month, year].join('/');
+}
+
+
+function verifyDebitCards(nroCuenta) {
+
+	$('#newLoading').css('display','block');
+	$('html, body').animate( {scrollTop : 0}, 800 );
+	$.ajax({
+		beforeSend: function (request){
+			request.setRequestHeader($("meta[name='_csrf_header']").attr("content"), $("meta[name='_csrf']").attr("content"));
+		},
+		type:"GET",
+		url: appname+ "/debit-card/notify/check-products",
+		data:{
+			nroCuenta: nroCuenta
+		},
+		success : function(data) {
+			if(data){
+				goToNotification(nroCuenta)
+			}
+			else{
+				showErrorMessage("No cont&aacute;s con Tarjetas de D&eacute;bito asociadas a esta cuenta. Record&aacute; que pod&eacute;s solicitar tu Tarjeta de D&eacute;bito en la sucursal de tu preferencia.");
+				$('#newLoading').hide();
+			}
+		},
+		error: fnHomeAjaxErrorHandler
+	});
+}
+
+
+/**
+ * @param amount (number) amount to format
+ * @param currency (Moneda)
+ *
+ * @returns string formatted amount
+ */
+function formatAmountString(amount, currencyCode) {
+    amount=Math.round(amount * 100) / 100;
+    var number = '' + amount;
+    number = number.split('.');
+    var formattedString = number[0].replace(/\B(?=(\d{3})+\b)/g, ".");
+
+    if (currencyCode != 6900) {
+        if (number[1] !== undefined) {
+            number[1] += '0';
+            formattedString += ',' + number[1].substring(0, 2);
+        } else {
+            formattedString += ',00';
+        }
+    }
+
+    return formattedString;
+}
+
+
+
+
+
+function closeModal(modalSelector){
+	$(modalSelector).modal('hide');
+}
+
+
+function handleErrorAjaxBody(errorBody, message){
+	if(errorBody.useApiMessage){
+		showErrorMessage(errorBody.message);
+	}else{
+		showErrorMessage(message);
+	}
+	redirectLoginExpired(errorBody.code);
+}
+
+function redirectLoginExpired(code) {
+	setTimeout(function () {
+		if(code=="a1100"||code== "g1011" ){
+			window.location.href = appname+"/login";
+		}
+	},2000);
+
+}
+
+/*Crea componente para error si no estan y agrega clases necesarias y mensaje si le especifica
+
+ *** El input debe tener una estructura padre con clase .form-group
+ */
+function showErrorInInput(inputElem, message) {
+    console.log('showErrorInInput');
+    var inputBox = inputElem.closest('.form-group');
+	inputBox.addClass('invalid');
+
+	if(inputBox.find('.invalid-feedback').length === 0){
+	    var htmlFeedback  = '<div class="invalid-feedback"></div>';
+        if(inputBox.find('.help-block').length > 0){ /*insertar error antes del mensaje de ayuda*/
+            $(htmlFeedback).insertBefore(inputBox.find('.help-block').first())
+        }
+        else
+            inputBox.append(htmlFeedback);
+    }
+
+
+	if(message !== undefined)
+		inputBox.find('.invalid-feedback').html(message);
+
+	inputBox.find('.invalid-feedback').show();
+
+}
+
+
+/*Oculta el error mostrado con 'showErrorInInput'  y saca clases de error*/
+function removeErrorFromInput(inputElem) {
+	var inputBox = inputElem.closest('.form-group');
+	inputBox.removeClass('invalid');
+	inputBox.find('.invalid-feedback').hide();
+}
+
+/*Muestra modal de confirmacion con titulo y mensaje*/
+/*importar modal-confirmation-msg.jsp para usar*/
+function showConfirmationMessage(title, messageText){
+	var modal = $('#modal-confirmation-msg');
+	modal.find('.modal-title').html(title);
+    modal.find('.msg-text').html(messageText);
+    modal.modal({backdrop: 'static', keyboard: false});
+}
+
+/*Muestra errores en el modal especificado, se debe agregar estructura html necesaria al modal*/
+var showModalError = function(modalElem, msg) {
+
+    if (msg == null || msg.length <= 1) {
+        msg = decodeString("Ocurri&oacute; un error inesperado. Intente de nuevo en un momento.");
+    }
+
+    $(modalElem).find('.error-message-modal').html(msg);
+    $(modalElem).find('.modal-error-message').slideDown(200);
+    setTimeout(function() {
+        $(modalElem).find('.modal-error-message').slideUp(200);
+    }, 5000);
+
+};
+
+/************************************************************************
+ *
+ *  FN(): Inicializa el teclado para el ingreso del pin
+ *
+ ************************************************************************/
+var initKeyboard = function(){
+    $('#teclado').html('');
+    buildKeyboardOnlyNumbers(false, $("#teclado"), $("#pin"),true);
+};
+
+function scrollWin() {
+	var popup = document.getElementsByClassName('scrolleable');
+	console.log("popup length");
+	console.log(popup.length);
+	popup[0].scrollTo(0, 600);
+	if (popup.length==1) {
+		popup[0].scrollTo(0, 600);
+	}else if (popup.length==2){
+		popup[1].scrollTo(0, 600);
+	}else if (popup.length==3){
+		popup[2].scrollTo(0, 600);
+	}else if (popup.length==4){
+		popup[1].scrollTo(0, 600);
+		popup[3].scrollTo(0, 600);
+	}else if (popup.length==5){
+		popup[2].scrollTo(0, 600);
+		popup[4].scrollTo(0, 600);
+	}
+
+}

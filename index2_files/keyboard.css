@@ -1,0 +1,43 @@
+/* Css Teclado Familiar */
+/* .keyboard-button {  height: 2em;  width: 1.8em; margin: 0em; padding:1px; text-align:center; cursor: pointer; overflow: hidden;   } */
+.keyboard-button {  
+	height: 2em; 
+	 width: 1.8em; 
+	 margin: 0em; 
+	 padding:1px; 
+	 text-align:center; 
+	 cursor: pointer;
+	border-radius: 8px;
+   	background-color: rgba(128, 128, 128, 0.38);
+    margin: 5px;
+    color: black;
+    font-size: 20px;
+    border: none;
+}
+.keyboard-widekey {  width: 9em; text-align: center; }
+.keyboard-keyset {height:200px; font-size: 1em; text-align: center;  box-shadow: 0 2px 10px #444444; border-color: #EEEEEE #888888 #444444 #CCCCCC; border-radius: 0.3em 0.3em 0.3em 0.3em;
+					background-color: #DEDEDC;  white-space: normal;  font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;}
+.keyboard-keyset2{width: 230px;}
+.boton-cerrar{width: 40px; background-color: #004185; color:white; border-radius: 20px; display: none !important;}
+
+/* .boton-borrar{width: 11em; background-color: #004185; color:white; position: absolute; transform: translateX(-50%); margin-left: 0px; margin-right: 0px;} */
+
+.boton-borrar{
+	width: 17em;
+	height:38px; 
+	font-size:13px;
+	background-color: #bbbbba;
+	position: absolute;
+	-webkit-transform: translateX(-50%);	
+	-moz-transform: translateX(-50%);
+	-ms-transform: translate(5px);
+	margin-left: 0px;
+	margin-right: 0px;
+	
+}
+
+@media screen and (max-width:991px){
+	.boton-borrar{
+		width: 9em;
+	}
+}

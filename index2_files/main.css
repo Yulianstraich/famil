@@ -1,0 +1,1919 @@
+@charset "UTF-8";
+/**
+ *---------------------------------------------------------
+ ... Instalar SASS >>>> https://sass-lang.com/install
+ * ARCHIVO PRINCIPAL, ESTE SE DEBE COMPILAR PARA GENERAR : main.css
+ * comando: sass --watch src/main/webapp/resources/scss/main.scss src/main/webapp/resources/css/main.css
+ *---------------------------------------------------------
+**/
+/*Helpers*/
+/* variables para definir valores que se usan en varios lugares*/
+/**
+*---------------------------------------------------------
+* VARIABLES USADAS EN TODA LA PAGINA
+*---------------------------------------------------------
+**/
+/**
+*---------------------------------------------------------
+* ESTILOS USADOS EN VARIOS LUGARES QUE PODEMOS REUSAR con @extend
+*---------------------------------------------------------
+**/
+.redesign-view h6, .redesign-view h5, .redesign-view h4, .redesign-view h3, .form-check label {
+  font-family: robotomedium;
+  font-style: normal;
+  font-weight: 500;
+  margin: 0 auto;
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.redesign-view .exchage-container .exchange-rate, .redesign-view .transaction-detail-page .details-section .transaction-detail .account-item .amount, .redesign-view .modal .modal-body .account-item .amount, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector .account-currency, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector .amount {
+  font-size: 12.8px;
+  line-height: 19px;
+  color: #337AB7;
+}
+
+.redesign-view .transaction-detail-page .details-section .transaction-detail .account-item .account-type, .redesign-view .modal .modal-body .account-item .account-type, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector .account-type {
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(28, 28, 30, 0.6);
+}
+
+.redesign-view textarea, .redesign-view input[type=text], .redesign-view input[type=password] {
+  background-color: white;
+  border: 1px solid #CED4DA;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 6px 12px;
+}
+
+.redesign-view.currency-exchage .quotation-detail .quotation-detail-label, .redesign-view .modal .modal-body .saved-item .bank-name, .redesign-view .modal .modal-body .account-item-deposit .bank-name, .redesign-view .small-text, .redesign-view .list-item .list-item-label {
+  font-size: 12.8px;
+  line-height: 19px;
+}
+
+/**
+*---------------------------------------------------------
+* BREACKPOINTS
+*---------------------------------------------------------
+**/
+/* Mixin */
+/**
+*---------------------------------------------------------
+* MIXIN - TIPO DE FUNCIONES QUE REUSAREMOS CON : @include
+*---------------------------------------------------------
+**/
+/* Utilitarios */
+.d-flex {
+  display: flex;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.items-center {
+  align-items: center !important;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-none {
+  float: none;
+}
+
+/*iconos que pueden ser usados en varios lugares*/
+/*Iconos que son usados en varios lugares del proyecto*/
+.redesign-view {
+  /*Table*/
+}
+.redesign-view .saved-accounts .saved-item .account-icon, .redesign-view .transaction-detail-page .details-section .transaction-detail .account-item .account-icon, .redesign-view .modal .modal-body .saved-item .account-icon, .redesign-view .modal .modal-body .account-item-deposit .account-icon, .redesign-view .modal .modal-body .account-item .account-icon, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.deposit-account .account-icon-familiar, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.bank-selector .account-icon-familiar, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.deposit-account .account-icon, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.bank-selector .account-icon, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.withdrawal-account .account-icon, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector .account-icon, .redesign-view table td .account-icon {
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+}
+.redesign-view .modal .modal-body .saved-item .selection-icon, .redesign-view .modal .modal-body .account-item-deposit .selection-icon, .redesign-view .modal .modal-body .account-item .selection-icon, .redesign-view .fami-table .fami-table-row .selection-icon {
+  background: url("../images/icons/redesign/chevron_right-ca7c397320cc7f5f100a34007feeb3fe.svg") no-repeat;
+  display: inline-block;
+  height: 25px;
+  width: 20px;
+}
+.redesign-view .chevron-down-icon {
+  background: url("../images/icons/redesign/chevron_down-5a231a107eeacbf979ef2b8408ccbfd5.svg") no-repeat;
+  display: inline-block;
+  height: 10px;
+  width: 20px;
+}
+.redesign-view .chevron-up-icon {
+  background: url("../images/icons/redesign/chevron_up-1f2f4bd44b69c205b9114ce9278f6a6f.svg") no-repeat;
+  display: inline-block;
+  height: 10px;
+  width: 20px;
+}
+.redesign-view .modal .modal-body .saved-item .options-icon, .redesign-view .modal .modal-body .account-item-deposit .options-icon, .redesign-view .fami-table .fami-table-row .options-icon {
+  background: url("../images/icons/redesign/three_dots_vertical-94350d897bcb9b98dce7af8f3c38ebf0.svg") no-repeat;
+  display: inline-block;
+  height: 25px;
+  width: 20px;
+}
+.redesign-view .options-icon-gray {
+  background: url("../images/icons/redesign/three_dots_vertical_gray-093db1913940e085c80e21aa9f84cd46.svg") no-repeat;
+  display: inline-block;
+  height: 25px;
+  width: 20px;
+}
+.redesign-view .transaction-detail-page .pin-section .favorite-icon {
+  background: url("../images/icons/redesign/favorite-0bf9ec8339c340fff05eb6fd9e33854a.svg") no-repeat;
+  display: inline-block;
+  height: 22px;
+  width: 22px;
+}
+.redesign-view .transfer-content .content-cuentas .question-icon {
+  background: url("../images/icons/redesign/question-icon-e6e37028852331f1c545494e421271e2.svg") no-repeat;
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+}
+.redesign-view .fami-table .fami-table-head .table-order-icon {
+  background: url("../images/icons/redesign/table/order-369820e549ce4cc3aea3072938fd9226.svg") no-repeat;
+  display: inline-block;
+  height: 12px;
+  width: 6px;
+  padding-left: 5px;
+  position: relative;
+  right: -5px;
+}
+.redesign-view .fami-table .fami-table-head .table-order-icon-up {
+  background: url("../images/icons/redesign/table/activated_up-43563232ffda244022d81f13196dd3b2.svg") no-repeat;
+  display: inline-block;
+  height: 12px;
+  width: 6px;
+  padding-left: 5px;
+  position: relative;
+  right: -5px;
+}
+.redesign-view .fami-table .fami-table-head .table-order-icon-down {
+  background: url("../images/icons/redesign/table/activated_down-cc855c37c131c56451eebbad71a1dabd.svg") no-repeat;
+  display: inline-block;
+  height: 12px;
+  width: 6px;
+  padding-left: 5px;
+  position: relative;
+  right: -5px;
+}
+/**
+*---------------------------------------------------------
+* COMPONENTES
+*---------------------------------------------------------
+**/
+/* componentes comunes de formularios */
+.redesign-view .form-control {
+  border-left: 1px solid #CED4DA;
+}
+.redesign-view .form-control:focus {
+  border-color: unset !important;
+}
+.redesign-view label {
+  font-family: robotomedium;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #606971;
+}
+.redesign-view .input-title {
+  color: #004185;
+  font-family: robotomedium;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+.redesign-view input[type=text], .redesign-view input[type=password] {
+  height: 36px;
+  width: 100%;
+}
+.redesign-view input[type=password] {
+  font-family: caption;
+  color: #495057;
+  font-size: 16px;
+  line-height: 24px;
+}
+.redesign-view input[readonly] {
+  background-color: #E9ECEF;
+}
+.redesign-view textarea {
+  min-height: 48px;
+}
+.redesign-view .btn, .redesign-view .content-teclado .keyboard-keyset2 .boton-borrar {
+  height: 46px;
+  border-radius: 4px;
+  font-family: robotomedium !important;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 6px 12px;
+  width: 100%;
+}
+.redesign-view .btn:active, .redesign-view .content-teclado .keyboard-keyset2 .boton-borrar:active, .redesign-view .btn:focus, .redesign-view .content-teclado .keyboard-keyset2 .boton-borrar:focus {
+  border-style: outset;
+  outline: none;
+}
+.redesign-view .btn.active, .redesign-view .content-teclado .keyboard-keyset2 .active.boton-borrar {
+  border-style: outset;
+  outline: none;
+}
+.redesign-view .btn-primary {
+  background-color: #004185;
+  color: white;
+}
+.redesign-view .btn-danger {
+  background-color: #DC3545;
+  color: white;
+}
+.redesign-view .btn-secondary {
+  background-color: white;
+  color: #004185;
+  border: 1px solid #004185;
+}
+.redesign-view .btn.disabled, .redesign-view .content-teclado .keyboard-keyset2 .disabled.boton-borrar {
+  background-color: #E9ECEF !important;
+  color: rgba(0, 0, 0, 0.5) !important;
+  border: none;
+}
+.redesign-view .help-block {
+  color: #337AB7;
+  font-family: robotomedium;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12.8px;
+  line-height: 19px;
+}
+.redesign-view .date-box {
+  display: block;
+}
+.redesign-view .date-box .form-control-feedback {
+  padding-top: 10px;
+  font-size: 16px;
+}
+.redesign-view .date-box .calendar-icon {
+  background: url("../images/icons/redesign/calendar-c72d104e5f30bd39cd556a08734d4ada.svg") no-repeat;
+  display: inline-block;
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+.redesign-view .btn-group {
+  display: inline-flex;
+}
+.redesign-view .btn-group label {
+  margin-right: 10px;
+}
+.redesign-view .btn-group .btn-default {
+  font-size: 16px;
+  line-height: 24px;
+  color: #606971;
+  padding-top: 10px;
+  border: 1px solid #CED4DA;
+}
+.redesign-view .btn-group .btn-default.active {
+  color: #337AB7;
+  border: 1px solid #337AB7;
+}
+.redesign-view .btn-group .btn-default:active, .redesign-view .btn-group .btn-default.active, .redesign-view .btn-group .btn-default:focus, .redesign-view .btn-group .btn-default.focus, .redesign-view .btn-group .btn-default:hover, .redesign-view .btn-group .btn-default.hover {
+  background-color: white !important;
+}
+.redesign-view .btn-group .btn.active, .redesign-view .btn-group .content-teclado .keyboard-keyset2 .active.boton-borrar, .redesign-view .content-teclado .keyboard-keyset2 .btn-group .active.boton-borrar, .redesign-view .btn-group .btn:active, .redesign-view .btn-group .content-teclado .keyboard-keyset2 .boton-borrar:active, .redesign-view .content-teclado .keyboard-keyset2 .btn-group .boton-borrar:active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.redesign-view .btn-no-borders {
+  border: none !important;
+}
+.redesign-view .form-group.invalid input[type=text], .redesign-view .form-group.invalid input[type=password] {
+  border: 1px solid #DC3545;
+  background-color: white;
+}
+.redesign-view .form-group .invalid-feedback {
+  color: #DC3545;
+  font-size: 12.8px;
+  line-height: 19px;
+}
+.redesign-view .form-group .input-group .input-group-btn .btn, .redesign-view .form-group .input-group .input-group-btn .content-teclado .keyboard-keyset2 .boton-borrar, .redesign-view .content-teclado .keyboard-keyset2 .form-group .input-group .input-group-btn .boton-borrar {
+  width: auto;
+  height: 36px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 16px;
+  border: 1px solid #337AB7;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.redesign-view .form-group .input-group .input-group-btn .btn.active, .redesign-view .form-group .input-group .input-group-btn .content-teclado .keyboard-keyset2 .active.boton-borrar, .redesign-view .content-teclado .keyboard-keyset2 .form-group .input-group .input-group-btn .active.boton-borrar {
+  color: white;
+  background-color: #337AB7;
+}
+.redesign-view .form-group .input-group .input-group-btn:last-child {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+.redesign-view .form-group .input-group input {
+  left: 1px;
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+}
+
+.redesign-view .checkbox {
+  padding-left: 20px;
+}
+.redesign-view .checkbox label {
+  color: #212529;
+  display: inline-block;
+  position: relative;
+  padding-left: 5px;
+  font-family: robotoregular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+.redesign-view .checkbox label::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  margin-top: 5px;
+  left: 0;
+  margin-left: -20px;
+  border: 1px solid #CED4DA;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.redesign-view .checkbox label::after {
+  display: inline-block;
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  left: 0;
+  top: -1px;
+  margin-left: -21px;
+  padding-left: 3px;
+  padding-top: 1px;
+  font-size: 9px; /*tamanno del check blanco*/
+  color: #555555;
+}
+.redesign-view .checkbox input[type=checkbox] {
+  opacity: 0;
+}
+.redesign-view .checkbox input[type=checkbox]:focus + label::before {
+  outline: none;
+}
+.redesign-view .checkbox input[type=checkbox]:disabled + label {
+  opacity: 0.65;
+}
+.redesign-view .checkbox input[type=checkbox]:disabled + label::before {
+  background-color: #eeeeee;
+  cursor: not-allowed;
+}
+.redesign-view .checkbox.checkbox-inline {
+  margin-top: 0;
+}
+.redesign-view .checkbox-primary input[type=checkbox]:checked + label::before {
+  background-color: #004185;
+  border-color: #004185;
+  outline: none;
+}
+.redesign-view .checkbox-primary input[type=checkbox]:checked + label::after {
+  color: #fff;
+}
+
+.redesign-view .radio label {
+  color: #212529;
+  display: inline-block;
+  position: relative;
+  padding-left: 5px;
+  font-family: robotoregular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+.redesign-view .radio label::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin-top: 4px;
+  left: -3px;
+  margin-left: -20px;
+  border: 1px solid #CED4DA;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.redesign-view .radio label::after {
+  display: inline-block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  left: 0;
+  top: 3px;
+  margin-left: -20px;
+  padding-left: 2px;
+  padding-top: 1px;
+  margin-top: 4px;
+  border-radius: 50%;
+  font-size: 8px;
+  color: #555555;
+}
+.redesign-view input[type=radio]:focus + label::before {
+  outline: none;
+}
+.redesign-view .radio-primary input[type=checkbox]:checked + label::before {
+  background-color: #004185;
+  border-color: #004185;
+  outline: none;
+}
+.redesign-view .radio-primary input[type=checkbox]:checked + label::after {
+  color: #fff;
+}
+
+.form-check .form-check-input {
+  float: left;
+  margin-left: -1.5em;
+}
+
+.form-check-input {
+  width: 28px;
+  height: 16px;
+  margin-top: 0.25em;
+  vertical-align: top;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid #ADB5BD;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-print-color-adjust: exact;
+  color-adjust: exact;
+  cursor: pointer;
+}
+.form-check-input:focus {
+  outline: none;
+}
+
+.form-check-input:checked {
+  background-color: #004185;
+  border-color: #004185;
+}
+
+.form-check-input[type=checkbox] {
+  border-radius: 8px;
+}
+
+.form-switch {
+  padding-left: 2.5em;
+}
+.form-switch .form-check-input {
+  width: 28px;
+  margin-right: 10px;
+  background-image: url(../images/icons/redesign/circulo_gris_switch-72627247aecac9e38b599a6a85e4cfa5.png);
+  background-position: left center;
+  border-radius: 8px;
+  transition: background-position 0.15s ease-in-out;
+  outline: none;
+}
+.form-switch .form-check-input:checked {
+  background-position: right center;
+  background-image: url(../images/icons/redesign/circulo_blanco_switch-b3f548e7fc879e4ee3ee2d9855bee643.svg);
+  outline: none;
+}
+.form-switch .form-check-input:focus {
+  outline: none;
+}
+
+.form-check {
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.5em;
+  margin-bottom: 0.125rem;
+}
+
+.form-check label {
+  color: #337AB7;
+  font-size: 20px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 767.98px) {
+  .redesign-view .modal {
+    padding-right: 0 !important;
+  }
+}
+.redesign-view .modal .modal-lg {
+  width: auto;
+  top: 10%;
+  outline: none;
+  max-width: 1000px;
+}
+.redesign-view .modal .size-modal-50 {
+  width: 50%;
+  top: 10%;
+  outline: none;
+}
+.redesign-view .modal .modal-content {
+  border-radius: 8px;
+  box-shadow: none;
+  border: none;
+}
+.redesign-view .modal .modal-content .modal-error-message {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+.redesign-view .modal .modal-content .modal-header {
+  border-bottom: none;
+  padding: 27px 27px 0 0;
+  margin: 0 0 0 88px;
+  background-color: unset;
+}
+@media (max-width: 767.98px) {
+  .redesign-view .modal .modal-content .modal-header {
+    margin-left: 5px;
+  }
+}
+.redesign-view .modal .modal-content .modal-header .modal-title {
+  color: #004185;
+  padding: 20px 0 15px 0;
+  padding: 5px 0 5px 0;
+}
+.redesign-view .modal .modal-content .modal-header .close {
+  margin-top: unset;
+  opacity: unset;
+  color: #004185;
+}
+.redesign-view .modal .modal-content .modal-header .close .close-icon {
+  background: url("../images/icons/redesign/modal_close-ed2975eaed67673cc8394068b148859f.svg") no-repeat;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+}
+.redesign-view .modal .modal-content .modal-header .close:hover, .redesign-view .modal .modal-content .modal-header .close:focus {
+  outline: none;
+}
+.redesign-view .modal .modal-content .modal-body {
+  padding: 0 88px;
+}
+@media (max-width: 767.98px) {
+  .redesign-view .modal .modal-content .modal-body {
+    padding: 15px 5px;
+  }
+}
+.redesign-view .modal .modal-content .modal-body h6 {
+  color: #004185;
+}
+.redesign-view .modal .modal-content .modal-footer {
+  background: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(27, 54, 93, 0.15);
+  border-radius: 0px 0px 8px 8px;
+}
+@media (max-width: 767.98px) {
+  .redesign-view .modal .modal-content .modal-footer {
+    padding: 5px 15px;
+  }
+}
+.redesign-view .modal .modal-content .btn-default {
+  border-color: #337AB7;
+}
+.redesign-view .modal .modal-content .btn-default :hover {
+  background-color: white;
+  color: #337AB7;
+}
+.redesign-view .default-modal .modal-content .modal-header {
+  margin: 0;
+  padding: 24px 24px 24px 24px;
+  border-bottom: 1px solid #DEE2E6;
+}
+.redesign-view .default-modal .modal-content .modal-header .modal-title {
+  padding: 0;
+}
+.redesign-view .default-modal .modal-content .modal-body {
+  padding: 24px 24px 24px 24px;
+}
+.redesign-view .default-modal .modal-content .modal-footer {
+  padding: 24px 24px 24px 24px;
+  background: #FFFFFF;
+  border-radius: 0 0 8px 8px;
+  box-shadow: none;
+}
+.redesign-view .modal-deposit-account .modal-body {
+  overflow-y: hidden;
+  padding-right: 0 !important;
+}
+@media (max-width: 575.98px) {
+  .redesign-view .modal-deposit-account .modal-body {
+    max-height: calc(100vh - 170px);
+  }
+}
+.redesign-view .modal-deposit-account .modal-body .search-bar {
+  padding-right: 88px;
+}
+@media (max-width: 767.98px) {
+  .redesign-view .modal-deposit-account .modal-body .search-bar {
+    padding: 0 10px 15px 0;
+  }
+}
+.redesign-view .modal-deposit-account .modal-body .account-list {
+  overflow-y: scroll;
+  max-height: calc(100vh - 500px);
+  min-height: 200px;
+  padding-right: 88px;
+}
+@media (max-width: 767.98px) {
+  .redesign-view .modal-deposit-account .modal-body .account-list {
+    padding-right: 10px;
+  }
+}
+.redesign-view .modal-deposit-account .modal-footer .new-account-box {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+@media (max-width: 767.98px) {
+  .redesign-view .modal-deposit-account .modal-footer .new-account-box {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+.redesign-view #modal-select-bank .modal-content {
+  /*background-color: #E5E5E5;*/
+}
+.redesign-view #modal-select-bank .modal-content .modal-body {
+  top: 0;
+  overflow-y: hidden;
+  padding-right: 73px !important;
+  padding-left: 73px !important;
+}
+@media (max-width: 767.98px) {
+  .redesign-view #modal-select-bank .modal-content .modal-body {
+    padding: 0 !important;
+  }
+}
+.redesign-view #modal-select-bank .modal-content .modal-body .search-bar {
+  padding-right: 88px;
+  padding-left: 15px;
+}
+@media (max-width: 575.98px) {
+  .redesign-view #modal-select-bank .modal-content .modal-body .search-bar {
+    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-right: 15px;
+  }
+}
+.redesign-view #modal-select-bank .modal-content .modal-body .bank-list {
+  overflow-y: scroll;
+  max-height: calc(100vh - 350px);
+  min-height: 250px;
+  padding-right: 58px;
+}
+@media (max-width: 575.98px) {
+  .redesign-view #modal-select-bank .modal-content .modal-body .bank-list {
+    padding: 10px 0 !important;
+  }
+}
+.redesign-view #modal-select-bank .modal-content .modal-body .bank-list .thumbnail {
+  min-height: 180px;
+  background: white;
+  box-shadow: 0px 5px 20px rgba(27, 54, 93, 0.1);
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  padding-top: 20px;
+}
+.redesign-view #modal-select-bank .modal-content .modal-body .bank-list .thumbnail:hover {
+  text-decoration: none;
+}
+.redesign-view #modal-select-bank .modal-content .modal-body .bank-list .thumbnail img {
+  height: 100px;
+  width: auto !important;
+}
+.redesign-view #modal-select-bank .modal-content .modal-body .bank-list .thumbnail .caption {
+  font-size: 12.8px;
+  line-height: 19px;
+  color: #343A40;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-transform: capitalize;
+  padding-right: 10px;
+}
+.redesign-view #modal-new-account .modal-dialog {
+  top: 0;
+}
+@media (max-width: 767.98px) {
+  .redesign-view #modal-new-account .modal-dialog {
+    top: 10%;
+  }
+}
+.redesign-view #modal-new-account .modal-dialog .modal-body {
+  overflow-y: auto;
+  max-height: calc(100vh - 140px);
+  min-height: 250px;
+}
+@media (max-width: 575.98px) {
+  .redesign-view #modal-new-account .modal-dialog .modal-body {
+    max-height: calc(100vh - 170px);
+  }
+}
+.redesign-view #modal-new-account .modal-dialog .modal-body .btn, .redesign-view #modal-new-account .modal-dialog .modal-body .content-teclado .keyboard-keyset2 .boton-borrar, .redesign-view .content-teclado .keyboard-keyset2 #modal-new-account .modal-dialog .modal-body .boton-borrar {
+  max-width: unset;
+}
+.redesign-view #modal-new-account .modal-dialog .form-check label {
+  color: #004185;
+  font-size: 16px;
+  line-height: 24px;
+}
+.redesign-view #modal-new-account .modal-dialog .save-account-items .btn-group .btn, .redesign-view #modal-new-account .modal-dialog .save-account-items .btn-group .content-teclado .keyboard-keyset2 .boton-borrar, .redesign-view .content-teclado .keyboard-keyset2 #modal-new-account .modal-dialog .save-account-items .btn-group .boton-borrar {
+  padding-left: 0;
+}
+.redesign-view #modal-new-account .modal-dialog .save-account-items .btn-group .btn .account-icon, .redesign-view #modal-new-account .modal-dialog .save-account-items .btn-group .content-teclado .keyboard-keyset2 .boton-borrar .account-icon, .redesign-view .content-teclado .keyboard-keyset2 #modal-new-account .modal-dialog .save-account-items .btn-group .boton-borrar .account-icon {
+  display: block;
+  height: 50px;
+  width: 50px;
+  background-color: #E9ECEF;
+  border-radius: 50%;
+}
+.redesign-view #modal-new-account .modal-dialog .save-account-items .btn-group .btn .account-icon span, .redesign-view #modal-new-account .modal-dialog .save-account-items .btn-group .content-teclado .keyboard-keyset2 .boton-borrar .account-icon span, .redesign-view .content-teclado .keyboard-keyset2 #modal-new-account .modal-dialog .save-account-items .btn-group .boton-borrar .account-icon span {
+  top: 13px;
+  position: relative;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+  color: #337AB7;
+}
+.redesign-view #modal-new-account .modal-dialog .save-account-items .btn-group .btn .img-avatar, .redesign-view #modal-new-account .modal-dialog .save-account-items .btn-group .content-teclado .keyboard-keyset2 .boton-borrar .img-avatar, .redesign-view .content-teclado .keyboard-keyset2 #modal-new-account .modal-dialog .save-account-items .btn-group .boton-borrar .img-avatar {
+  height: 50px;
+}
+.redesign-view #modal-new-account .modal-dialog .save-account-items .btn-group .active .avatar-selected {
+  height: 58px;
+  width: 58px;
+  border: 1px solid #004185;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: -4px;
+  top: 2px;
+}
+.redesign-view .modal-my-accounts .modal-body {
+  overflow-y: scroll;
+  max-height: calc(100vh - 250px);
+  min-height: 250px;
+}
+.redesign-view .modal.otp-modal {
+  position: fixed !important;
+}
+.redesign-view .modal.otp-modal .modal-header {
+  border-bottom: none;
+}
+.redesign-view .modal.otp-modal .modal-body {
+  overflow-y: scroll;
+  max-height: calc(100vh - 250px);
+  min-height: 250px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+@media (max-width: 575.98px) {
+  .redesign-view .modal.otp-modal .modal-body {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 575.98px) {
+  .redesign-view .modal.otp-modal .modal-body .otpinputfield {
+    width: 70%;
+    margin-left: 15%;
+  }
+}
+@media (max-width: 575.98px) {
+  .redesign-view .modal.otp-modal .modal-body .otpinputfield .otpinput {
+    height: 2em;
+    width: 2em;
+  }
+}
+.redesign-view .modal.otp-modal .modal-footer {
+  border-top: none;
+  padding-top: 0;
+}
+.redesign-view .modal.otp-modal .modal-footer .btn, .redesign-view .modal.otp-modal .modal-footer .content-teclado .keyboard-keyset2 .boton-borrar, .redesign-view .content-teclado .keyboard-keyset2 .modal.otp-modal .modal-footer .boton-borrar {
+  width: 60%;
+  margin-left: 20%;
+  max-width: unset !important;
+}
+@media (max-width: 575.98px) {
+  .redesign-view .modal.otp-modal .modal-footer .btn, .redesign-view .modal.otp-modal .modal-footer .content-teclado .keyboard-keyset2 .boton-borrar, .redesign-view .content-teclado .keyboard-keyset2 .modal.otp-modal .modal-footer .boton-borrar {
+    width: 100%;
+    margin-left: 0;
+    max-width: unset !important;
+  }
+}
+
+/**
+*---------------------------------------------------------
+* Nuevos estilos de Teclado de Pin
+*---------------------------------------------------------
+**/
+.redesign-view .content-teclado {
+  width: 100%;
+  padding-top: 20px;
+}
+@media (max-width: 575.98px) {
+  .redesign-view .content-teclado {
+    margin-bottom: 20px;
+  }
+}
+.redesign-view .content-teclado .keyboard-keyset2 {
+  width: 100%;
+}
+.redesign-view .content-teclado .keyboard-keyset2 .keyboard-button {
+  height: 54px;
+  width: 54px;
+  margin: 0em;
+  padding: 1px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #EEF2F7;
+  margin: 5px;
+  color: #606971;
+  font-size: 32px;
+  line-height: 38px;
+  border: none;
+}
+@media (max-width: 575.98px) {
+  .redesign-view .content-teclado .keyboard-keyset2 .keyboard-button {
+    height: 40px;
+    width: 40px;
+    font-size: 24px !important;
+  }
+}
+.redesign-view .content-teclado .keyboard-keyset2 .boton-borrar {
+  border-radius: 4px;
+}
+.redesign-view .content-teclado .keyboard-keyset2 .boton-cerrar {
+  width: 40px;
+  background-color: #004185;
+  color: white;
+  border-radius: 20px;
+  display: none !important;
+}
+.redesign-view .content-teclado .keyboard-keyset2 .boton-borrar {
+  background-color: white;
+  color: #004185 !important;
+  border: 1px solid #004185 !important;
+  height: 38px;
+  margin: 20px 0 0 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 400;
+  width: 310px;
+}
+.redesign-view .content-teclado .keyboard-widekey {
+  width: 9em;
+  text-align: center;
+}
+.redesign-view .content-teclado .keyboard-keyset {
+  height: 200px;
+  font-size: 1em;
+  text-align: center;
+  box-shadow: none;
+  border-color: unset;
+  border-radius: unset;
+  background: none;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+/**
+*---------------------------------------------------------
+* estilos de la barra de Scroll
+*---------------------------------------------------------
+**/
+.redesign-view {
+  /* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+  /* Ponemos un color de fondo y redondeamos las esquinas del track */
+}
+.redesign-view .scrolleable::-webkit-scrollbar {
+  width: 24px; /* Tamaño del scroll en vertical */
+  height: 30px; /* Tamaño del scroll en horizontal */
+  -webkit-appearance: none;
+}
+.redesign-view .scrolleable::-webkit-scrollbar-thumb {
+  background: #CED4DA;
+  border: 8px solid white;
+  border-radius: 12px;
+}
+.redesign-view .scrolleable-blue-backgound::-webkit-scrollbar-thumb {
+  background: #CED4DA;
+  border: 8px solid #eef2f7;
+  border-radius: 12px;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+.redesign-view .scrolleable::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* componentes Tabla con estilo , aca solo estilos comunes para todas las tablas, dar estilos especificos en los archivos de paginas*/
+.redesign-view .fami-table {
+  /*Submenu de opciones*/
+}
+.redesign-view .fami-table .table-loading {
+  height: unset;
+  position: absolute;
+  min-height: 50px;
+  left: 50%;
+  z-index: 1;
+  top: 250px;
+  display: none;
+}
+.redesign-view .fami-table .table-loading img {
+  width: 50px;
+}
+.redesign-view .fami-table .fami-table-head {
+  height: 52px;
+  padding-top: 5px;
+  border-top: 1px solid #DEE2E6;
+}
+.redesign-view .fami-table .fami-table-head .text-header {
+  font-size: 12.8px;
+  line-height: 20px;
+}
+.redesign-view .fami-table .fami-table-head .order-header {
+  cursor: pointer;
+}
+.redesign-view .fami-table .fami-table-row {
+  height: 52px;
+  border-top: 1px solid #DEE2E6;
+}
+.redesign-view .fami-table .fami-table-row img {
+  height: 36.8px;
+}
+.redesign-view .fami-table .fami-table-row .options-icon {
+  cursor: pointer;
+}
+.redesign-view .fami-table .fami-table-row .nro-producto {
+  padding-top: 3px;
+}
+.redesign-view .fami-table .fami-table-row .nro-producto h6 {
+  color: #212529;
+  font-family: "robotoregular";
+}
+.redesign-view .fami-table .dropdown-menu-left {
+  /*  top: 100%;
+    transform: translateY(10%);*/
+  left: auto;
+  right: 40%;
+}
+.redesign-view .fami-table .open > .dropdown-menu {
+  padding: 12px 24px;
+  border: 1px solid #DFDFDF;
+  box-shadow: 0 2px 4px rgba(27, 54, 93, 0.08);
+  border-radius: 4px;
+  background: white;
+  min-width: unset;
+}
+.redesign-view .fami-table .open > .dropdown-menu li {
+  border-bottom: none;
+  padding: 0;
+}
+.redesign-view .fami-table .open > .dropdown-menu li a {
+  color: #212529 !important;
+  font-size: 16px;
+  line-height: 24px;
+}
+.redesign-view .fami-table-pagination {
+  text-align: center;
+}
+.redesign-view .fami-table-pagination .pagination {
+  margin-bottom: 0;
+}
+.redesign-view .fami-table-pagination .pagination li.active a {
+  background-color: #004185;
+  color: #FFFFFF !important;
+}
+.redesign-view .fami-table-pagination .pagination li a {
+  font-size: 16px;
+  line-height: 24px;
+}
+.redesign-view .dataTables_wrapper .dataTables_filter {
+  float: left;
+  text-align: left;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.redesign-view .dataTables_wrapper .dataTables_filter input {
+  margin-left: 0;
+}
+.redesign-view .dataTables_wrapper .dataTables_filter .input-group-addon {
+  width: auto;
+}
+.redesign-view .dataTables_wrapper .dataTables_filter label {
+  margin-bottom: 0;
+}
+.redesign-view .dataTables_wrapper .dataTables_length {
+  float: right;
+}
+.redesign-view .dataTables_wrapper .btn, .redesign-view .dataTables_wrapper .content-teclado .keyboard-keyset2 .boton-borrar, .redesign-view .content-teclado .keyboard-keyset2 .dataTables_wrapper .boton-borrar {
+  height: auto;
+}
+.redesign-view .dataTables_wrapper .dataTables_paginate .paginate_button {
+  background: #004185 !important;
+  color: white !important;
+  margin-left: 0;
+}
+.redesign-view .dataTables_wrapper .dataTables_paginate .previous {
+  padding: 12px 15px 9px 15px;
+  background: #FFFFFF !important;
+  border: 1px solid #DEE2E6 !important;
+  box-sizing: border-box;
+  border-radius: 4px 0 0 4px;
+  color: #6C757D !important;
+}
+.redesign-view .dataTables_wrapper .dataTables_paginate .next {
+  padding: 12px 15px 9px 15px;
+  background: #FFFFFF !important;
+  border: 1px solid #DEE2E6 !important;
+  box-sizing: border-box;
+  border-radius: 0 4px 4px 0;
+  color: #6C757D !important;
+}
+.redesign-view table.dataTable thead .sorting_asc {
+  background: none !important;
+}
+.redesign-view table.dataTable thead .sorting_desc {
+  background: none !important;
+}
+.redesign-view table.dataTable thead .sorting {
+  background: none !important;
+}
+.redesign-view table.dataTable thead th {
+  border-bottom: 1px solid #CED4DA;
+}
+.redesign-view table.dataTable.no-footer {
+  border-bottom: 1px solid #CED4DA;
+  border-top: 1px solid #CED4DA;
+}
+.redesign-view table td .account-icon {
+  background-color: #E9ECEF;
+  border-radius: 50%;
+  height: 36.8px;
+  width: 36.8px;
+  text-align: center;
+}
+.redesign-view table td .account-icon span {
+  top: 8px;
+  position: relative;
+  /*left: 9px;*/
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+  color: #337AB7;
+}
+.redesign-view span.arrow-hack {
+  margin-left: 5px;
+}
+.redesign-view span.asc {
+  background: url("../images/icons/redesign/table/activated_up-43563232ffda244022d81f13196dd3b2.svg") no-repeat center right;
+}
+.redesign-view span.desc {
+  background: url("../images/icons/redesign/table/activated_down-cc855c37c131c56451eebbad71a1dabd.svg") no-repeat center right;
+}
+.redesign-view span.sort {
+  background: url("../images/icons/redesign/table/order-369820e549ce4cc3aea3072938fd9226.svg") no-repeat center right;
+}
+.redesign-view .bg-table-details {
+  background: rgba(218, 227, 238, 0.4509803922);
+  border-radius: 8px;
+}
+.redesign-view .bg-table-details .scrolleable::-webkit-scrollbar {
+  width: 10px;
+  height: 0;
+}
+.redesign-view .bg-table-details .scrolleable::-webkit-scrollbar-thumb {
+  background: #CED4DA !important;
+  border: none !important;
+}
+
+/* Estilos comunes */
+/* Estilos Comunes */
+.redesign-view {
+  position: relative;
+}
+@media (max-width: 767.98px) {
+  .redesign-view {
+    padding-top: 30px;
+  }
+}
+.redesign-view h3 {
+  color: #004185;
+  font-size: 28px;
+  line-height: 34px;
+  display: block;
+}
+.redesign-view h4 {
+  color: #004185;
+  font-size: 24px;
+  line-height: 29px;
+}
+.redesign-view h5 {
+  color: #004185;
+  font-size: 20px;
+  line-height: 24px;
+}
+.redesign-view h6 {
+  color: #337AB7;
+  font-size: 16px;
+  line-height: 19px;
+}
+.redesign-view h6.subtitle {
+  color: #004185;
+}
+.redesign-view span {
+  font-size: 16px;
+  line-height: 24px;
+}
+.redesign-view .justify-content-center {
+  justify-content: center;
+}
+.redesign-view a:hover {
+  text-decoration: none;
+}
+.redesign-view .text-black, .redesign-view .modal .modal-body .ammount-selector-box h6 {
+  color: #212529 !important;
+}
+.redesign-view .text-success {
+  color: #28A745;
+}
+.redesign-view .two-line-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding: inherit;
+}
+.redesign-view .small-text, .redesign-view .list-item .list-item-label {
+  color: #212529;
+}
+.redesign-view .transfer-head .cuentas-head-inner {
+  min-height: 45px;
+  height: 60px;
+}
+@media (max-width: 767.98px) {
+  .redesign-view .transfer-head .cuentas-head-inner #wz-title {
+    padding-left: 5px;
+  }
+}
+@media (max-width: 767.98px) {
+  .redesign-view .transfer-head .cuentas-head-inner #headerOptions .agendar-transaccion {
+    border-bottom: none !important;
+    padding-bottom: 10px;
+  }
+  .redesign-view .transfer-head .cuentas-head-inner #headerOptions #switchCheckMultiTransferBox {
+    padding-bottom: 10px;
+  }
+}
+.redesign-view .transfer-head .hrow {
+  min-height: 60px;
+  height: 60px;
+}
+.redesign-view .transfer-content {
+  margin-top: 0;
+  background-color: white;
+  border-radius: 8px;
+  padding: 0;
+}
+.redesign-view .transfer-content .content-cuentas {
+  border: none;
+  height: 100%;
+  width: 100%;
+  padding: 40px 121px 10px 121px;
+  min-height: 375px !important;
+}
+@media (max-width: 767.98px) {
+  .redesign-view .transfer-content .content-cuentas {
+    padding: 20px 10px 10px 10px;
+  }
+}
+.redesign-view .transfer-content .content-cuentas .cuentas-white {
+  padding: 0;
+  margin: 0;
+  min-height: 375px !important;
+}
+@media (min-width: 792px) {
+  .redesign-view .transfer-content .accounts-selection .account-selector-box {
+    width: 47% !important;
+  }
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector {
+  padding: 32px 24px;
+  width: 100%;
+  height: 128px;
+  background: white;
+  box-shadow: 0px 5px 20px rgba(27, 54, 93, 0.15);
+  border-radius: 8px;
+  margin: 16px 0 20px 0;
+  cursor: pointer;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector:first-child {
+  padding-right: 0;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.error {
+  border: 2px solid #FDB92A;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector .bank-name {
+  text-transform: capitalize;
+  color: #337AB7;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector .add-account-icon {
+  background: url("../images/icons/redesign/add_account-8550dbbbe8b72560b12769fa48c79464.png") no-repeat;
+  display: inline-block;
+  height: 52px;
+  width: 52px;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector .change-account-icon {
+  background: url("../images/icons/redesign/arrow_left_right-57121cb1339610b043dbe05c1da87d6b.svg") no-repeat;
+  display: inline-block;
+  height: 52px;
+  width: 52px;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector h6 {
+  color: #1C1C1E;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector h6.select-account-label {
+  color: #337AB7;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector h6.nowrap {
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 25px;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector .account-icon {
+  background: url("../images/familiar-c683dfa5457aa7790f5a5ee4de7ac009.png") no-repeat;
+  background-size: 100%;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector .more-account-data {
+  margin-top: 20px;
+}
+@media (max-width: 575.98px) {
+  .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.withdrawal-account {
+    padding: 5px 20px;
+  }
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.withdrawal-account .account-icon {
+  background: url("../images/familiar-c683dfa5457aa7790f5a5ee4de7ac009.png") no-repeat;
+  background-size: 100%;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.withdrawal-account .account-icon.eco-icon {
+  background: url("https://ssecure2.familiar.com.py/icons/iconos_eko/isologotipo.png") no-repeat;
+  background-size: 100%;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.deposit-account .account-icon, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.bank-selector .account-icon {
+  background: none;
+  border-radius: 50%;
+}
+@media (max-width: 575.98px) {
+  .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.deposit-account .account-icon, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.bank-selector .account-icon {
+    padding: 5px 20px;
+  }
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.deposit-account .account-icon span, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.bank-selector .account-icon span {
+  top: 13px;
+  position: relative;
+  left: 14px;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+  color: #337AB7;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.deposit-account .account-icon.familiar-icon, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.bank-selector .account-icon.familiar-icon {
+  background: url("../images/familiar-c683dfa5457aa7790f5a5ee4de7ac009.png") no-repeat;
+  background-size: 100%;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.deposit-account .account-icon.eco-icon, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.bank-selector .account-icon.eco-icon {
+  background: url("https://ssecure2.familiar.com.py/icons/iconos_eko/isologotipo.png") no-repeat;
+  background-size: 100%;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.deposit-account .account-icon-familiar, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.bank-selector .account-icon-familiar {
+  background: url("../images/familiar-c683dfa5457aa7790f5a5ee4de7ac009.png") no-repeat;
+  background-size: 100%;
+  background-color: unset;
+}
+.redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.deposit-account .account-icon-familiar.eco-icon, .redesign-view .transfer-content .accounts-selection .account-selector-box .account-selector.bank-selector .account-icon-familiar.eco-icon {
+  background: url("https://ssecure2.familiar.com.py/icons/iconos_eko/isologotipo.png") no-repeat;
+  background-size: 100%;
+}
+.redesign-view .transfer-content .accounts-selection .add-account .add-account-icon {
+  background: url("../images/icons/redesign/add_account-8550dbbbe8b72560b12769fa48c79464.png") no-repeat;
+  display: inline-block;
+  height: 52px;
+  width: 52px;
+  cursor: pointer;
+}
+.redesign-view .transfer-content .accounts-selection .add-account h6 {
+  color: #337AB7;
+  cursor: pointer;
+}
+.redesign-view .transfer-content .accounts-selection .arrow-icon {
+  background: url("../images/icons/redesign/arrow_right-59288176c08d47a772e62bbc05629819.svg") no-repeat;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  margin-top: 75px;
+  margin-left: 2%;
+}
+.redesign-view .transfer-content .arrow-indicator-box {
+  padding: 0;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .redesign-view .transfer-content .arrow-indicator-box {
+    width: 6%;
+  }
+}
+@media (max-width: 767.98px) {
+  .redesign-view .transfer-content .arrow-indicator-box .arrow-icon {
+    margin-top: 0;
+  }
+}
+.redesign-view .transfer-content .data-block {
+  margin-top: 10px;
+}
+.redesign-view .breadcrumb {
+  position: relative;
+  right: 50px;
+  background: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media (max-width: 575.98px) {
+  .redesign-view .breadcrumb {
+    max-width: 200px;
+  }
+}
+@media (max-width: 767.98px) {
+  .redesign-view .breadcrumb {
+    right: 10px;
+  }
+}
+.redesign-view .breadcrumb li a {
+  font-size: 16px;
+  text-decoration: none;
+}
+.redesign-view .breadcrumb li.active a {
+  color: #6C757D !important;
+  cursor: default;
+  quotes: "«" "»" "„" "“";
+  text-decoration: none;
+}
+.redesign-view .list-item {
+  height: 80px;
+  background: #FFFFFF;
+  box-shadow: 0 5px 20px rgba(27, 54, 93, 0.15);
+  border-radius: 8px;
+  padding: 18px 24px;
+  margin-top: 16px;
+  cursor: pointer;
+}
+.redesign-view .list-item .list-item-label {
+  color: #6C757D;
+}
+.redesign-view .list-item .list-item-value {
+  color: #212529;
+}
+.redesign-view .list-item .list-item-action .btn-select-cuenta {
+  background: url(../images/icons/iconos-10-bc37a53bcd0c05e5db8f181c2ceaa83a.png) center center no-repeat;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: auto;
+  float: right;
+}
+.redesign-view .badge {
+  background-color: #337AB7;
+}
+.redesign-view .badge .close {
+  margin-left: 1.25rem;
+  color: inherit;
+  font-size: 100%;
+}
+.redesign-view .badge.badge-pill.badge-pending {
+  background: rgba(231, 198, 151, 0.3019607843);
+  color: #FF9500;
+}
+.redesign-view .badge.badge-pill.badge-concretada {
+  background: rgba(149, 231, 226, 0.3019607843);
+  color: #00A15E;
+}
+.redesign-view .badge.badge-pill.badge-error {
+  background: rgba(231, 151, 164, 0.3019607843);
+  color: #DC3545;
+}
+.redesign-view .badge.badge-pill.badge-no-completada {
+  background: rgba(23, 162, 184, 0.3019607843);
+  color: #17A2B8;
+}
+.redesign-view .badge.badge-pill.badge-reversada {
+  background: rgba(51, 122, 183, 0.3019607843);
+  color: #337AB7;
+}
+.redesign-view .badge.badge-pill.badge-rechazada {
+  background: rgba(190, 190, 193, 0.3019607843);
+  color: #8E8E93;
+}
+.redesign-view .border-table {
+  border: 1px solid rgb(223, 223, 223);
+}
+.redesign-view .btn, .redesign-view .content-teclado .keyboard-keyset2 .boton-borrar {
+  max-width: 200px;
+}
+.redesign-view .btn-primary {
+  color: white;
+}
+.redesign-view .text-white {
+  color: white;
+}
+.redesign-view .text-danger {
+  color: #DC3545;
+}
+.redesign-view .title-button-gray {
+  color: #6C757D;
+}
+.redesign-view .btn-outline-primary {
+  color: #004185;
+  background-color: transparent;
+  background-image: none;
+  border-color: #004185;
+}
+.redesign-view .btn-outline-primary:hover {
+  color: #fff;
+  background-color: #004185;
+  border-color: #004185;
+}
+.redesign-view .btn-outline-danger {
+  color: #DC3545;
+  background-color: transparent;
+  background-image: none;
+  border-color: #DC3545;
+}
+.redesign-view .btn-outline-danger :hover {
+  color: #fff;
+  background-color: #DC3545;
+  border-color: #DC3545;
+}
+.redesign-view .title-detail-gray {
+  text-align: center;
+  border-bottom: 0px solid #808080;
+  color: #6C757D;
+  font-weight: 700;
+}
+.redesign-view .title-detail-primary {
+  text-align: center;
+  border-bottom: 0px solid #808080;
+  color: #004185;
+  font-weight: 700;
+}
+.redesign-view .table-text-black {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #212529;
+  display: block;
+}
+.redesign-view .autorizadores {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background: #E9ECEF;
+  text-align: center;
+  color: #6C757D;
+  border-radius: 8px;
+  display: block;
+}
+.redesign-view .detalle-error {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background: rgba(220, 53, 69, 0.3019607843);
+  text-align: center;
+  color: #DC3545;
+  border-radius: 8px;
+  display: block;
+}
+.redesign-view .detalle-pendiente {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background: #FDB92A;
+  text-align: center;
+  color: #212529;
+  border-radius: 8px;
+  display: block;
+}
+.redesign-view .table-bg-white {
+  background: #FFFFFF;
+  border: 1px solid #DFDFDF;
+  border-radius: 8px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.redesign-view .options-icon-gray {
+  cursor: pointer;
+}
+.redesign-view .span-autorizantes {
+  background: #FDB92A;
+  border-radius: 8px;
+  padding: 16px 105px;
+}
+
+/**
+*---------------------------------------------------------
+* PAGINAS O PARTES DE PAGINAS
+*---------------------------------------------------------
+**/
+/**
+*---------------------------------------------------------
+* Selector de cuentas en modals
+*---------------------------------------------------------
+**/
+.redesign-view .modal .modal-body {
+  /*cuentas familiar*/
+  /*Cuentas guardadas de todos los bancos*/
+}
+.redesign-view .modal .modal-body .search-bar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.redesign-view .modal .modal-body .account-item {
+  padding: 24px;
+  background: #FFFFFF;
+  box-shadow: 0 5px 20px rgba(27, 54, 93, 0.15);
+  border-radius: 8px;
+  margin: 16px 0;
+  cursor: pointer;
+}
+@media (max-width: 575.98px) {
+  .redesign-view .modal .modal-body .account-item {
+    padding: 10px 5px;
+  }
+}
+@media (max-width: 575.98px) {
+  .redesign-view .modal .modal-body .account-item .data-box {
+    padding: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 575.98px) {
+  .redesign-view .modal .modal-body .account-item .selection-box {
+    display: none;
+  }
+}
+.redesign-view .modal .modal-body .account-item h6 {
+  color: #1C1C1E;
+}
+.redesign-view .modal .modal-body .account-item .account-icon {
+  background: url("../images/familiar-c683dfa5457aa7790f5a5ee4de7ac009.png") no-repeat;
+  background-size: 100%;
+}
+.redesign-view .modal .modal-body .account-item .account-icon.eco-icon {
+  background: url("https://ssecure2.familiar.com.py/icons/iconos_eko/isologotipo.png") no-repeat;
+  background-size: 100%;
+}
+.redesign-view .modal .modal-body .saved-item, .redesign-view .modal .modal-body .account-item-deposit {
+  padding: 16px;
+  border-bottom: 1px solid #CED4DA;
+  cursor: pointer;
+  /*.save-accounts-menu{
+    position: absolute;
+    right: 70px;
+    border: 1px solid #DFDFDF;
+    background: white;
+    padding: 12px 24px;
+    box-shadow: 0 2px 4px rgb(27 54 93 / 8%);
+    border-radius: 4px;
+    z-index: 10;
+
+    .p{
+      color: $text-black;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }*/
+}
+@media (max-width: 575.98px) {
+  .redesign-view .modal .modal-body .saved-item, .redesign-view .modal .modal-body .account-item-deposit {
+    padding: 5px;
+  }
+}
+.redesign-view .modal .modal-body .saved-item .alias-box, .redesign-view .modal .modal-body .account-item-deposit .alias-box {
+  padding-left: 20px;
+}
+@media (max-width: 767.98px) {
+  .redesign-view .modal .modal-body .saved-item .alias-box, .redesign-view .modal .modal-body .account-item-deposit .alias-box {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+.redesign-view .modal .modal-body .saved-item .menu-box, .redesign-view .modal .modal-body .account-item-deposit .menu-box {
+  padding-left: 0;
+}
+.redesign-view .modal .modal-body .saved-item h6, .redesign-view .modal .modal-body .account-item-deposit h6 {
+  color: #1C1C1E;
+}
+.redesign-view .modal .modal-body .saved-item .account-icon, .redesign-view .modal .modal-body .account-item-deposit .account-icon {
+  background-color: #E9ECEF;
+  border-radius: 50%;
+}
+.redesign-view .modal .modal-body .saved-item .account-icon span, .redesign-view .modal .modal-body .account-item-deposit .account-icon span {
+  top: 13px;
+  position: relative;
+  left: 14px;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+  color: #337AB7;
+}
+.redesign-view .modal .modal-body .saved-item .bank-name, .redesign-view .modal .modal-body .account-item-deposit .bank-name {
+  text-transform: capitalize;
+  color: #337AB7;
+}
+.redesign-view .modal .modal-body .saved-item .dropdown-menu-left, .redesign-view .modal .modal-body .account-item-deposit .dropdown-menu-left {
+  top: 50%;
+  transform: translateY(20%);
+  left: auto;
+  right: 65%;
+}
+.redesign-view .modal .modal-body .saved-item .open > .dropdown-menu, .redesign-view .modal .modal-body .account-item-deposit .open > .dropdown-menu {
+  padding: 12px 24px;
+  border: 1px solid #DFDFDF;
+  box-shadow: 0 2px 4px rgba(27, 54, 93, 0.08);
+  border-radius: 4px;
+  background: white;
+  min-width: unset;
+  top: -45px;
+}
+.redesign-view .modal .modal-body .saved-item .open > .dropdown-menu li, .redesign-view .modal .modal-body .account-item-deposit .open > .dropdown-menu li {
+  border-bottom: none;
+  padding: 0;
+}
+.redesign-view .modal .modal-body .saved-item .open > .dropdown-menu li a, .redesign-view .modal .modal-body .account-item-deposit .open > .dropdown-menu li a {
+  color: #212529 !important;
+  font-size: 16px;
+  line-height: 24px;
+}
+.redesign-view .modal .modal-body .account-item-deposit {
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+}
+.redesign-view .modal .modal-body .account-item-deposit .account-icon {
+  background-color: unset;
+}
+.redesign-view .modal .modal-body .ammount-selector-box {
+  background-color: #F8F9FA;
+  padding: 16px 24px;
+  border: 1px solid #CED4DA;
+  border-top: none;
+}
+.redesign-view .search-bar .input-group-addon {
+  background-color: #E9ECEF;
+  border: 1px solid #CED4DA;
+  border-right: none;
+  border-radius: 4px;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  line-height: 0.5;
+}
+.redesign-view .search-bar .search-icon {
+  background: url("../images/icons/redesign/search-6bb4c1ae0789c91e66247bb3d158abe4.svg") no-repeat;
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+}
+.redesign-view .search-bar input[type=text] {
+  height: 38px;
+  border-left: none;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+/**
+*---------------------------------------------------------
+* Pagina de detalles de transacciones
+*---------------------------------------------------------
+**/
+.redesign-view .transaction-detail-page h5, .redesign-view .transaction-detail-page h6 {
+  color: #004185;
+}
+.redesign-view .transaction-detail-page .details-section {
+  background: rgba(218, 227, 238, 0.45);
+  border-radius: 8px;
+  padding: 24px;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+.redesign-view .transaction-detail-page .details-section .transaction-detail .account-item {
+  padding-top: 10px;
+}
+.redesign-view .transaction-detail-page .details-section .transaction-detail .account-item h6 {
+  color: #1C1C1E;
+}
+.redesign-view .transaction-detail-page .details-section .detail-label-value h6 {
+  padding-bottom: 8px;
+}
+.redesign-view .transaction-detail-page .withdrawal-detail .account-icon {
+  background: url("../images/familiar-c683dfa5457aa7790f5a5ee4de7ac009.png") no-repeat;
+  background-size: 100%;
+}
+.redesign-view .transaction-detail-page .withdrawal-detail .account-icon.eco-icon {
+  background: url("https://ssecure2.familiar.com.py/icons/iconos_eko/isologotipo.png") no-repeat;
+  background-size: 100%;
+}
+.redesign-view .transaction-detail-page .deposit-detail .account-icon-familiar {
+  background: url("../images/familiar-c683dfa5457aa7790f5a5ee4de7ac009.png") no-repeat;
+  background-size: 100%;
+}
+.redesign-view .transaction-detail-page .pin-section {
+  padding: 24px;
+}
+@media (max-width: 575.98px) {
+  .redesign-view .transaction-detail-page .pin-section .favorite-box {
+    margin-top: 30px;
+  }
+}
+.redesign-view .transaction-detail-page .pin-section .keyboard-box {
+  padding-top: 24px;
+}
+.redesign-view .transaction-detail-page .pin-section .form-switch input {
+  margin-top: 6px;
+}
+.redesign-view .transaction-detail-page .pin-section .favorite-icon {
+  position: absolute;
+  margin-left: 10px;
+}
+.redesign-view .transfer-content .content-cuentas .question-icon {
+  position: relative;
+  padding-left: 10px;
+  margin-left: 10px;
+  top: 5px;
+}
+
+/**
+*---------------------------------------------------------
+* ESTILOS ESPECIFICOS DE PAGINAS DE TRANSFERENCIA A OTRAS CUENTAS
+*---------------------------------------------------------
+**/
+.redesign-view .many-account-row {
+  margin-top: 24px;
+}
+.redesign-view .many-account-row .subtitle {
+  color: #337AB7;
+}
+.redesign-view .many-account-row .account-box {
+  margin: 16px 0 10px 0;
+  border: 1px solid #ECEDEC;
+  border-radius: 8px;
+  padding: 24px;
+}
+.redesign-view .many-account-row .btn-secondary {
+  height: 40px;
+  padding: 5px 10px;
+  color: #337AB7;
+  border: 1px solid #337AB7;
+}
+@media (max-width: 575.98px) {
+  .redesign-view .content-transfer-step .account-box .phone-field {
+    padding-right: 0;
+  }
+}
+.redesign-view .exchage-container {
+  border: 1px solid #DFDFDF;
+  border-radius: 8px;
+  padding: 24px;
+}
+.redesign-view .exchage-container .exchange-description {
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(28, 28, 30, 0.6);
+}
+.redesign-view .exchage-container .exchange-amount {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #1C1C1E;
+}
+.redesign-view .exchage-container .input-title {
+  display: block;
+}
+
+/**
+*---------------------------------------------------------
+* pagina de fin de operaciones
+*---------------------------------------------------------
+**/
+.redesign-view .finish-page .image-ok {
+  height: 240px;
+  width: auto;
+  padding: 50px 0 50px 0;
+}
+.redesign-view .finish-page .msgText {
+  font-size: 20px;
+  line-height: 30px;
+  color: #212529;
+}
+.redesign-view .error-page .msgText {
+  font-size: 20px;
+  line-height: 30px;
+  color: #212529;
+}
+
+/*LISTADO DE CUENTAS GUARDADAS, OPCIONES*/
+.redesign-view .saved-accounts {
+  border: 1px solid #DEE2E6;
+  padding: 20px;
+  min-height: 200px;
+}
+.redesign-view .saved-accounts .search-bar {
+  padding-bottom: 20px;
+}
+.redesign-view .saved-accounts .saved-item .account-icon {
+  background-color: #E9ECEF;
+  border-radius: 50%;
+  height: 36.8px;
+  width: 36.8px;
+  text-align: center;
+}
+.redesign-view .saved-accounts .saved-item .account-icon span {
+  top: 8px;
+  position: relative;
+  /*left: 9px;*/
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+  color: #337AB7;
+}
+
+/**
+*---------------------------------------------------------
+* paginas de cambio de Monedas
+*---------------------------------------------------------
+**/
+.redesign-view.currency-exchage .title-operation {
+  color: #004185;
+}
+.redesign-view.currency-exchage h5, .redesign-view.currency-exchage h6.title-operation {
+  color: #004185;
+}
+.redesign-view.currency-exchage .quotation-detail {
+  border: 1px solid #CED4DA;
+  border-radius: 8px;
+  padding: 31px;
+  margin-bottom: 20px;
+}
+.redesign-view.currency-exchage .quotation-detail .quotation-detail-label {
+  color: #6C757D;
+}
+.redesign-view.currency-exchage .quotation-detail .quotation-detail-value {
+  color: #004185;
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */

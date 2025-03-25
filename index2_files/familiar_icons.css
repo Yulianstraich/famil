@@ -1,0 +1,1295 @@
+.favotitos-icon-header{
+	background: url('../images/icons/iconos-26-74e3badc772cadc06774cac6d0606652.png') no-repeat;
+	display: inline-block;
+	height: 52px;
+	width: 52px;
+	margin-right: 15px;
+}
+.transaccion-icon-header{
+	background: url('../images/icons/iconos-51-b836894678fea24e113b537567b06c78.png') no-repeat;
+	display: inline-block;
+	height: 52px;
+	width: 52px;
+	margin-right: 15px;
+}
+.pagar-icon-header{
+	background: url('../images/icons/iconos-27-f3f67f0ba759afa1a9284c2e91b863c7.png') no-repeat;
+	display: inline-block;
+	height: 52px;
+	width: 52px;
+	margin-right: 15px;
+}
+.transferir-icon-header{
+	background: url('../images/icons/iconos-28-663118b4465e6a3d313e15c8e7ecbbd7.png') no-repeat;
+	display: inline-block;
+	height: 52px;
+	width: 52px;
+	margin-right: 15px;
+}
+.aumento-linea-credito-icon-header{
+	background: url('../images/icons/icono_Aumento_de_Linea_de_Credito_Blanco-b7f269b4865a38d617445849332174e7.png') no-repeat;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;	
+}
+.chequera-icon-header{
+	background: url('../images/icons/icono_Solicitud_Chequera_Blanco-3c188aaf9d7b9348b144bcaf33bb323a.png') no-repeat;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;	
+}
+.solicitud-tc-icon-header{
+	background: url('../images/icons/icono_Configuracion_de_tarjetas_de_credito_Blanco-9c70a6f1a6b7d29cb6844c222acc2a22.png') no-repeat;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;	
+}
+
+.notificacion-td-icon-header{
+	background: url('../images/icons/icono-notificacion-blanco-f1c1f308e7d504162ae024be3381a59d.png') no-repeat;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;	
+}
+
+.transferencia-intenacional-icon-header{
+	background: url('../images/icons/ICONO_TransferenciaIinternacionalBlanco-e938d2cb3ddc8e2728b91072f06eb5b9.png') no-repeat;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;	
+}
+
+.giro-nac-icon-header{
+	background: url('../images/icons/icono_Giros_Nac_Blanco-e132ebffc4a7c1ee7f215591481c62e1.png') no-repeat;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;	
+}
+.op-cambio-icon-header{
+	background: url('../images/icons/icono_op_cambio_blanco-e39cfad8630c11e8a16a02a7348fa3c6.png') no-repeat;
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	background-size: 100% ;
+}
+.giro-internac-icon-header{
+	background: url('../images/icons/icono_Giros_Internac_Blanco-2155ddecb83321797a576ba0d0d44a98.png') no-repeat;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;	
+}
+.cda-icon-header{
+	background: url('../images/icons/icons-cda2-white-39954058d90402ff132b8af9afc3d613.png') no-repeat;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;	
+}
+.update-email-icon-header{
+	background: url('../images/icons/icono_Actualizar_Correo_Electronico_Blanco-a1d9980457a0bc9833ec10d5c1102650.png') no-repeat;   
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;	
+}
+.solicitud-prestamo-icon-header{
+	background: url('../images/icons/icono_Solicitud_de_Prestamo_Blanco-1a8dfd21c56fa39bfe068fbea8f7c956.png') no-repeat;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;	
+}
+.reimpresion-desbloqueo-icon-header{
+	background: url('../images/icons/icono_Reimpresion_Desbloqueo_de_PIN_de_TC_Blanco-00b04f6e6dcd47531027a04c0342ac88.png') no-repeat;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;	
+}
+.change-password-icon-header{
+	background: url('../images/icons/icono_Cambio_de_Contrasena_Blanco-f300f776d5705f34befc05cf5a783172.png') no-repeat;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;	
+}
+.pin-icon-header{
+	background: url('../images/icons/icono_Generar_o_Cambiar_PIN_Blanco-678f451496a5d39f952408eadd9ba175.png') no-repeat;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;	
+}
+.icon-carga-minutos{
+	background: url('../images/icons/iconos-42-d66e1064b427db7aa8e34e35fdb6e85a.png') no-repeat center center;
+	display: inline-block;
+	height: 45px;
+	width: 45px;
+	margin:auto;
+	
+}
+.icon-acount-box{
+	background: url('../images/icons/iconos-billetera-d856c175a9be1db7876ad66de56abd0b.png') no-repeat center center;
+	display: inline-block;
+	height: 51px;
+	width: 50px;
+	background-size: 100%;
+}
+.icon-prestamos-box{
+	background: url('../images/icons/icons-prestamo-afb05db3b07328f8782981715483cb34.png') no-repeat center center;
+	display: inline-block;
+	height: 51px;
+	width: 50px;
+	background-size: 100%;
+}
+.icon-prestamos-white{
+	background: url('../images/icons/icons-prestamo-white-9ef3fed9e0b978ffc5e4e89ac7678a7b.png') no-repeat center center;
+	display: inline-block;
+	height: 51px;
+	width: 50px;
+	background-size: 100%;
+}
+.icon-prestamos-blue-box{
+	background: url('../images/icons/icons-prestamo-afb05db3b07328f8782981715483cb34.png') no-repeat center center;
+	display: inline-block;
+	height: 51px;
+	width: 50px;
+	background-size: 100%;
+}
+.icon-cda-box{
+	background: url('../images/icons/icons-cda2-82055be52e034cae6c03e6ee60208021.png') no-repeat center center;
+	display: inline-block;
+	height: 51px;
+	width: 50px;
+	background-size: 100%;
+}
+.icon-card-box{
+	background: url('../images/icons/iconos-tarjeta-b0961f987f3cae3e890fad1132cd070e.png') no-repeat center center;
+	display: inline-block;
+	height: 51px;
+	width: 50px;
+	background-size: 100%;
+}
+/*----ICONOS DE GIROS TIGO - CLARO- PERSONAL ---*/
+	.icon-giros-claro{
+		background: url('../images/icons/Claro150x150-688f1808b301bbcf103fabc799ce4e0c.png') no-repeat center center;
+		background-size: 100%;
+	}
+	.icon-giros-tigo{
+		background: url('../images/icons/Tigo150x150-0e1cc9cb8b7f9a9d1ef11b926d6f72d0.png') no-repeat center center;
+		background-size: 100%;
+	}
+	.icon-envios-personal{
+		background: url('../images/icons/Personal150x150-b8ba25e7d67641364048f42481e5da26.png') no-repeat center center;
+		background-size: 100%;
+	}
+/*------------------------------------*/
+/*-------ICONOS DE LAS TARJETAS-------*/
+.icon-card-box-mastercard-gold {
+	background: url('../images/icons/tarjetas-164x164/164x164/MASTER-CARD-ORO-93aa88f4894593f715b3d1eb95d0b158.png') no-repeat center center;
+	display: inline-block;
+	height: 130px;
+	width: 150px;
+	background-size: 100%;
+}
+.icon-card-box-mastercard-gold-inter-exa {
+	background: url('../images/icons/tarjetas-164x164/164x164/MASTER-CARD-ORO-INTER-4a10b99aaacb3a4bb41efa4fccaf33ad.png') no-repeat center center;
+	display: inline-block;
+	height: 130px;
+	width: 150px;
+	background-size: 100%;
+}
+.icon-card-box-mastercard-clasica {
+	background: url('../images/icons/tarjetas-164x164/164x164/MASTER-CARD-CLASICA-cbb93c7dbb78aabfe1847fdb1d829f08.png') no-repeat center center;
+	display: inline-block;
+	height: 130px;
+	width: 150px;
+	background-size: 100%;
+}
+.icon-card-box-mastercard-clasica-inter-exa {
+	background: url('../images/icons/tarjetas-164x164/164x164/MASTER-CARD-CLASICA-INTER-e76e64fa97dd2be6abaa19f2fea2f2e1.png') no-repeat center center;
+	display: inline-block;
+	height: 130px;
+	width: 150px;
+	background-size: 100%;
+}
+.icon-card-box-visa-clasica {
+	background: url('../images/icons/tarjetas-164x164/164x164/VISA-CLASICA-cf5b77a1367ee10c2f7028057cfbbb33.png') no-repeat center center;
+	display: inline-block;
+	height: 130px;
+	width: 150px;
+	background-size: 100%;
+}
+.icon-card-box-visa-oro {
+	background: url('../images/icons/tarjetas-164x164/164x164/VISA-ORO-6016698264a26a4de85ce15cddd6ba88.png') no-repeat center center;
+	display: inline-block;
+	height: 130px;
+	width: 150px;
+	background-size: 100%;
+}
+.icon-card-box-visa-platinum {
+	background: url('../images/icons/tarjetas-164x164/164x164/VISA-PLATIMUN-164f21ae31d10970e90d39a04ae83161.png') no-repeat center center;
+	display: inline-block;
+	height: 130px;/*51*/
+	width: 150px;/*50*/
+	background-size: 100%;
+}
+.icon-card-box-positiva {
+	background: url('../images/icons/tarjetas-164x164/POSITIVA-676e3c39a0b84df7a13d684da37dc5a1.png') no-repeat center center;
+	display: inline-block;
+	height: 130px;
+	width: 150px;
+	background-size: 100%;
+}
+.icon-card-box-gourmet-card {
+	background: url('../images/icons/tarjetas-164x164/GOURMET-76deb812768e9a62508d1a22fd2f2d75.png') no-repeat center center;
+	display: inline-block;
+	height: 130px;
+	width: 150px;
+	background-size: 100%;
+}
+.icon-card-box-movil-card {
+	background: url('../images/icons/tarjetas-164x164/MOVIL-CARD-297e3bd7b159d9c74d099d0cd6b4beb3.png') no-repeat center center;
+	display: inline-block;
+	height: 130px;
+	width: 150px;
+	background-size: 100%;
+}
+/*------------------------------------*/
+.icon-transference-box{
+	background: url('../images/icons/iconos-31-413934361b7f47ae66a4e71f4dd7ee29.png') no-repeat center center;
+	display: inline-block;
+	height: 51px;
+	width: 50px;
+	background-size: 100%;
+}
+
+.icon-cheduled-box{
+	background: url('../images/icons/icono_Transferencias_Agendadas_Blanco-7e98a613dd49f66a508acb8ae8bd1d53.png') no-repeat center center;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;
+}
+
+.icon-extract{
+	background: url('../images/icons/icono_extracto_blanco-5ac509ce415922777a749c6fcad392d5.png') no-repeat center center;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;
+}
+.icon-previuos-box{
+	background: url('../images/icons/iconos_Transferencias_anteriores-1c53b1edfb84d5c1e7d35c8357412839.png') no-repeat center center;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;
+}
+.icon-solicitudes-vigentes-box{
+	background: url('../images/icons/icono_Solicitudes_Vigentes_Blanco-1026a922317dcdb1fe0d32ad416ee0be.png') no-repeat center center;
+	display: inline-block;
+	height: 32px;
+	width: 32px;	
+	background-size: 100% ;
+}
+
+.icon-opciones-box{
+	background: url('../images/icons/icono_op_cambio_blanco-e39cfad8630c11e8a16a02a7348fa3c6.png') no-repeat center center;
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	background-size: 100%;
+}
+
+.icon-servicios-box{
+	background: url('../images/icons/Familiar_Iconos_Servicios_Blanco-bf14b9dbe684369ee4dc0b206b79151c.png') no-repeat center center;
+	display: inline-block;
+	height: 51px;
+	width: 50px;
+	background-size: 100%;
+}
+
+.icon-favoritos-box{
+	background: url('../images/icons/Familiar_Iconos_Favoritos_Blanco-57700342c1ba979689a67f3c90edc99b.png') no-repeat center center;
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	background-size: 100%;
+}
+
+.icon-gest-cuentas{
+	background: url('../images/icons/Gestionar_Cuentas_Blanco-c40a8ec12c4000fa66c8e700df53b944.png') no-repeat center center;
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	background-size: 100%;
+}
+
+.icon-transacciones-box{
+	background: url('../images/icons/ICONO_Transacciones_Pendientes_Titulo-7a5400cee6d0cf8a1a063a5ab6cb7dd3.png') no-repeat center center;
+	display: inline-block;
+	height: 37px;
+	width: 36px;
+	background-size: 100%;
+}
+.icon-carga-minuto-table{
+	background: url('../images/icons/iconos-42-d66e1064b427db7aa8e34e35fdb6e85a.png') no-repeat center center;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size:100%;
+}
+.icon-transfer-table{
+	background: url('../images/icons/iconos-36-61456baf2d02f0a3fb03898eae91acab.png') no-repeat center center;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size:100%
+}
+.icon-trash-table{
+	background: url('../images/icons/Familiar_Iconos_Trash-7625cfcf788dc1579fd6e98d82c89baa.png') no-repeat center center;
+	display: inline-block;
+	height: 43px;
+	width: 43px;
+	background-size:100%
+}
+.icon-edit-table{
+	background: url('../images/icons/Editar-132a1ce31689308bcc4b6c869e491032.png') no-repeat center center;
+	display: inline-block;
+	height: 43px;
+	width: 43px;
+	background-size:100%
+}
+
+.icon-box-product-account{
+	background: url('../images/icons/iconos-32-edad5d6a5107d932ddae954112e25e29.png') no-repeat center center;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size:100%
+}
+.icon-box-product-card{
+	background: url('../images/icons/iconos-34-ea9307e2a6fd02a9f5312832fd92100b.png') no-repeat center center;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size:100%
+}
+.icon-box-product-loan{
+	background: url('../images/icons/icons-prestamo-afb05db3b07328f8782981715483cb34.png') no-repeat center center;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size:100%
+}
+.icon-box-product-transfer{
+	background: url('../images/icons/iconos-36-61456baf2d02f0a3fb03898eae91acab.png') no-repeat center center;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size:100%
+}
+.icon-box-product-minutes{
+	background: url('../images/icons/iconos-41-8dc42e5e78fd3ca89ff3cfdf0f8d0398.png') no-repeat center center;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size:100%
+}
+
+.icon-box-product-familiar{
+	background: url('../images/icons/icons-familiar-3d8ac598a49c0fd73f751617140fdfcd.png') no-repeat center center;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size:100%
+}
+.icon-box-product-bank{
+	background: url('../images/icons/icons-bank-a9a1485e66136a7470889a28755dce34.png') no-repeat center center;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size:100%
+}
+
+.icon-box-intenational-transfer{
+	background: url('../images/icons/ICONO_TransferenciaIinternacionalAzul-ce678f3bd60392928b856fbd9f356932.png') no-repeat center center;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size:100%
+}
+
+.icon-box-notify{
+	background: url('../images/icons/icono-notificacion-azul-56e75bda12777ab980274d83fa547820.png') no-repeat center center;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size:100%
+}
+.icon-box-card-config{
+	background: url('../images/icons/icono_Configuracion_de_tarjetas_de_credito_Azul-dc0cfe2596c03e54ec824a687a29a29b.png') no-repeat center center;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size:100%
+}
+.icon-box-product-pago{
+	background: url('../images/icons/iconos-40-a017b4e505048b31b6964ac5d748bf54.png') no-repeat center center;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size:100%
+}
+
+.icon-box-card-points{
+	background: url('../images/icons/card_points-3a8240b3ab09624d0750c54dd89d86f8.png') no-repeat center center;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	background-size:100%
+}
+
+.icon-menu{
+	display: inline-block;
+	height: 24px;
+	width: 24px;
+	vertical-align: middle;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.icon-table{
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	vertical-align: middle;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.icon-menu-home{
+	background: url('../images/icons/iconos-30-0dbf2ea6a7c42bdb9fb9461f8f6b897b.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-acount{
+	background: url('../images/icons/iconos-32-edad5d6a5107d932ddae954112e25e29.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-cambio{
+	background: url('../images/icons/icono_op_cambio_azul-d6a287d57facb7f2a48212fecbdb0e5e.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-transfer-white{
+	background: url('../images/icons/redesign/transfer_white-51a286253030779611338ff94db2eab9.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-transfer-blue{
+	background: url('../images/icons/redesign/transfer_blue-3e503b68cc74974f44fc3618c311c280.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-transfer-other{
+	background: url('../images/icons/ICONO_TransaferenciaOtraCuenta-ffb02fb002f803a13766ca44ac7aaefa.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-transfer-other-white{
+	background: url('../images/icons/ICONO_TransaferenciaOtraCuentaBlanco-5478618e98dff89e6c6e79cac6d5d595.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-transfer-sipap{
+	background: url('../images/icons/ICONO_TransferenciaSipap-78654e7272538d54340a871ed6fd4673.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-transfer-international{
+	background: url('../images/icons/ICONO_TransferenciaIinternacionalAzul-ce678f3bd60392928b856fbd9f356932.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-transfer-sipap-white{
+	background: url('../images/icons/ICONO_TransferenciaSipapBlanco-03e86d06f296412c24a9252737106d4b.png') no-repeat center center;
+	background-size:100%;
+}
+
+.icon-menu-op-cambio-white {
+	background: url('../images/icons/icono_op_cambio_blanco-e39cfad8630c11e8a16a02a7348fa3c6.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-transfer-international-white{
+	background: url('../images/icons/ICONO_TransferenciaIinternacionalBlanco-e938d2cb3ddc8e2728b91072f06eb5b9.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-card{
+	background: url('../images/icons/iconos-34-ea9307e2a6fd02a9f5312832fd92100b.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-transfer{
+	background: url('../images/icons/iconos-36-61456baf2d02f0a3fb03898eae91acab.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-scheduled{
+	background: url('../images/icons/icono_Transferencias_Agendadas_Azul-124b6f4687c8a3f1b4ffa7591595fde0.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-transfer-previous{
+	background: url('../images/icons/Transferencias_Anteriores_Azul-2b625722fe6d0f3b4d6a89bdf010e345.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-scheduled-white{
+	background: url('../images/icons/icono_Transferencias_Agendadas_Blanco-7e98a613dd49f66a508acb8ae8bd1d53.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-transfer-previous-white{
+	background: url('../images/icons/Transferencias_Anteriores_Blanco-439e7b660d24931d7ea83eb2993e609d.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-transactions-pending-white{
+	background: url('../images/icons/iconos-51-b836894678fea24e113b537567b06c78.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-transfer-previous-blue{
+	background: url('../images/icons/Transferencias_Anteriores_Azul-2b625722fe6d0f3b4d6a89bdf010e345.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-prestamos{
+	background: url('../images/icons/icons-prestamo-afb05db3b07328f8782981715483cb34.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-cda{
+	background: url('../images/icons/icons-cda2-82055be52e034cae6c03e6ee60208021.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-extract{
+	background: url('../images/icons/icono_extracto_azul-9abe6b2cca90a5cef9cc447a9fac5e98.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-pagos{
+	background: url('../images/icons/iconos-40-a017b4e505048b31b6964ac5d748bf54.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-pin{
+	background: url('../images/icons/icono_Generar_o_Cambiar_PIN_Azul-915821ca34f37af529b41902f1fa9097.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-compra-min{
+	background: url('../images/icons/iconos-42-d66e1064b427db7aa8e34e35fdb6e85a.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-donacion{
+	background: url('../images/icons/Familiar_Iconos_Donacipones_Azul-ab3bf1a7c6b640be5e81cef573f85901.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-servicios{
+	background: url('../images/icons/Familiar_Iconos_Servicios_Azul-bc8f600ba52530624447db3283e528a8.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-notificacion{
+	background: url('../images/icons/iconos-44-c341e6046756f035e90580342c28ec0d.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-solicitud{
+	background: url('../images/icons/icono_Solicitudes_Vigentes_Azul-bea03f2a6828cb789d17bd79acecae01.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-giros{
+	background: url('../images/icons/icono_Giros_Azul-a2b06824e69881cfdf9161b1bb1d8f47.png') no-repeat center center;
+	background-size:100%;
+}
+/*.icon-menu-operaciones{
+	background: url('../images/icons/iconos-48.png') no-repeat center center;
+	background-size:100%;
+}*/
+.icon-menu-recomendaciones{
+	background: url('../images/icons/iconos-50-6f3c21039d62a8f3ba20b51856106115.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-config{
+	background: url('../images/icons/Familiar_Iconos_Config_Azul-0c4941ee70997691cd4194079c9c2742.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-opciones{
+	background: url('../images/icons/iconos_opciones_azul-34aa646ef1c9b1f37f23e3282821cb12.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-aumento_linea_credito{
+	background: url('../images/icons/icono_Aumento_de_Linea_de_Credito_Azul-a8711428178b6abfcb0d12c0b9c8426d.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-chequera{
+	background: url('../images/icons/icono_Solicitud_Chequera_Azul-808a1b00b0f263db3ff7e9eec3e12828.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-change-password{
+	background: url('../images/icons/icono_Cambio_de_Contrasena_Azul-dfda0f57f4c8e571d2154372d9fe93ec.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-update-email{
+	background: url('../images/icons/icono_Actualizar_Correo_Electronico_Azul-34460419668a28ec5e539b92d3686991.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-gest-cuentas{
+	background: url('../images/icons/Gestionar_Cuentas_Azul_grande-baef72edce24cabb023fb79605c6d8d9.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-config-tc{
+	background: url('../images/icons/icono_Configuracion_de_tarjetas_de_credito_Azul-dc0cfe2596c03e54ec824a687a29a29b.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-config-td{
+	background: url('../images/icons/icono-notificacion-azul-56e75bda12777ab980274d83fa547820.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-solicitud-tc{
+	background: url('../images/icons/icono_Solicitud_TC_Azul-144aeb3bc6236e275d8928324af06a65.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-giro-nac{
+	background: url('../images/icons/icono_Giros_Nac_Azul-bc980a892e904e7421c159029263363a.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-giro-internac{
+	background: url('../images/icons/icono_Giros_Internac_Azul-72478f799fafa4c6b0003995aaaf41be.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-solicitud-prestamo{
+	background: url('../images/icons/icono_Solicitud_de_Prestamo_Azul-c4a8441b02aa4fa20d728a7fc8c0c4ad.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-reimpresion-desbloqueo{
+	background: url('../images/icons/icono_Reimpresion_Desbloqueo_de_PIN_de_TC_Azul-18b5d93ca8b2fb7e72561d34fc1215f1.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-transacciones-pendientes{
+	background: url('../images/icons/ICONO_Transacciones_PendientesMenu_Lateral_Azul-5a74c01867b6cb3e00328f006b0bb5e4.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-menu-alias{
+	background: url('../images/icons/Avatar_azul-a367e29d66533d354af4e1b3ba6e729c.png') no-repeat center center;
+	background-size:100%;
+}
+.icon-mas{
+	background: url('../images/icons/icons-mas-585b2bbd1dd2c7f6caf82de9276aae09.png') no-repeat center center;
+	background-size:100%;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: top;
+}
+.icon-mas-chevron{
+	background: url('../images/icons/redesign/chevron-down-0edf8f2dc9e05ab034cc5430a3215fe3.png') no-repeat center center;
+	background-size:100%;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: top;
+}
+.icon-mas-disabled{
+	background: url('../images/icons/icons-mas-585b2bbd1dd2c7f6caf82de9276aae09.png') no-repeat center center;
+	background-size:100%;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: top;
+	pointer-events: none;
+	cursor: default;
+}
+
+.icon-trash{
+	background: url('../images/icons/Familiar_Iconos_Trash-7625cfcf788dc1579fd6e98d82c89baa.png') no-repeat center center;
+	background-size:150%;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: top;
+}
+.icon-menos{
+	background: url('../images/icons/icons-menos-02f6c40fc4713bdd7e2952a5771d046f.png') no-repeat center center;
+	background-size:100%;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: top;
+}
+.icon-menos-chevron{
+	background: url('../images/icons/redesign/chevron-up-0228272e70ae80f6a709d2b8fc57755f.png') no-repeat center center;
+	background-size:100%;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: top;
+}
+.icon-print-doc{
+	background: url('../images/icons/icons-print-be099fd69627ba70a4ba95806d8e7dc5.png') no-repeat center center; 
+    background-size: 60%;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+.icon-print-doc-table{
+	background: url('../images/icons/icons-print-be099fd69627ba70a4ba95806d8e7dc5.png') no-repeat center center;
+	background-size:80%;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: top;
+}
+.icon-print-doc-table-pdf{
+	 background: url('../images/icons/Pdf-e3658b9f5190b41d149a057a7ba7c452.png') no-repeat center center;
+	 background-size:80%;
+	 display: inline-block;
+	 width: 20px;
+	 height: 20px;
+	 vertical-align: top;
+ }
+.icon-print-doc-table-xml{
+	background: url('../images/icons/Xml-1fb69d0583e9e76d0b7de5d304a0a324.png') no-repeat center center;
+	background-size:80%;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	vertical-align: top;
+}
+.icon-familiar{
+	background: url('../images/familiar-icon-073b716a5e06b32657928df049230e96.png') no-repeat left center;
+	background-size: 70%;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.icon-familiar-inner{
+	background: url('../images/familiar-c683dfa5457aa7790f5a5ee4de7ac009.png') no-repeat center center; 
+    background-size: auto 100%;
+    display: inline-block;
+    width: 100%;
+    height: 120px;
+}
+
+.image-familiar-agua{
+	background: url('familiarbg-cc134b13d462cd0e9e3d1d56386a883f.png') no-repeat center center;
+	background-size: 100%;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.image-back-old-bw{
+	background: url('../images/ir-vieja-bw-a2e816fa0a87a98f9789f4069f6d483b.png') no-repeat left center;
+	background-size: 70%;
+    display: inline-block;
+    width: 140%;
+    height: 100%;
+    height: 100px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.image-wellcome{
+	background: url('../images/wellcome-9734110e78c9fe8b8ab7ef50562f6bee.jpg') no-repeat left center;
+	background-size: 90%;
+    display: inline-block;
+    width: 150%;
+    height: 100%;
+    height: 600px;
+    margin-top: 0px;
+    cursor: pointer;
+}
+.image-welcome-business{
+	background: url('../images/welcome-business-e2ac02ee6c7955e882e984dac2d265dc.png') no-repeat left center;
+	background-size: 90%;
+	display: inline-block;
+	width: 150%;
+	height: 100%;
+	height: 600px;
+	margin-top: 0px;
+	cursor: pointer;
+}
+.image-banner-login{
+	background: url('../images/banner_popup-7b9fe388aa4b2911b81687b364276e43.png') no-repeat left center;
+ /* background: url('../images/banner_popup-872a8fb8820af5899d8a306c0272cdb6.jpg') no-repeat left center; */
+	background-size: 100%;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    height: 600px;
+    margin-top: 0px;
+    cursor: pointer;
+}
+
+.navbar li.active a .icon-menu-home,
+.navbar li.active ul li a.active .icon-menu-home,
+.navbar li.active ul li a.active:hover .icon-menu-home{
+	background: url('../images/icons/iconos-29-7c5969755e28a98400ab93a5ae16614e.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-home,
+.navbar li.active ul li a:hover .icon-menu-home{ 
+	background: url('../images/icons/iconos-30-0dbf2ea6a7c42bdb9fb9461f8f6b897b.png') no-repeat center center; background-size:contain; }
+
+.dd-transferencias li a .icon-menu-acount,
+.navbar li.active a .icon-menu-acount,
+.navbar li.active ul li a.active .icon-menu-acount,
+.navbar li.active ul li a.active:hover .icon-menu-acount{
+	background: url('../images/icons/iconos-31-413934361b7f47ae66a4e71f4dd7ee29.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-acount,
+.navbar li.active ul li a:hover .icon-menu-acount{ 
+	background: url('../images/icons/iconos-32-edad5d6a5107d932ddae954112e25e29.png') no-repeat center center; background-size:contain; }
+
+
+.dd-transferencias li a .icon-menu-cambio,
+.navbar li.active a .icon-menu-cambio,
+.navbar li.active ul li a.active .icon-menu-cambio,
+.navbar li.active ul li a.active:hover .icon-menu-cambio{
+	background: url('../images/icons/icono_op_cambio_blanco-e39cfad8630c11e8a16a02a7348fa3c6.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-cambio,
+.navbar li.active ul li a:hover .icon-menu-cambio{
+	background: url('../images/icons/icono_op_cambio_azul-d6a287d57facb7f2a48212fecbdb0e5e.png') no-repeat center center; background-size:contain; }
+
+
+
+
+.dd-transferencias li a .icon-menu-transfer-other,
+.navbar li.active a .icon-menu-transfer-other,
+.navbar li.active ul li a.active .icon-menu-transfer-other,
+.navbar li.active ul li a.active:hover .icon-menu-transfer-other{
+	background: url('../images/icons/ICONO_TransaferenciaOtraCuentaBlanco-5478618e98dff89e6c6e79cac6d5d595.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-transfer-other,
+.navbar li.active ul li a:hover .icon-menu-transfer-other{ 
+	background: url('../images/icons/ICONO_TransaferenciaOtraCuenta-ffb02fb002f803a13766ca44ac7aaefa.png') no-repeat center center; background-size:contain; }
+
+
+.dd-transferencias li a .icon-menu-transfer-sipap,
+.navbar li.active a .icon-menu-transfer-sipap,
+.navbar li.active ul li a.active .icon-menu-transfer-sipap,
+.navbar li.active ul li a.active:hover .icon-menu-transfer-sipap{
+	background: url('../images/icons/ICONO_TransferenciaSipapBlanco-03e86d06f296412c24a9252737106d4b.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-transfer-sipap,
+.navbar li.active ul li a:hover .icon-menu-transfer-sipap{ 
+	background: url('../images/icons/ICONO_TransferenciaSipap-78654e7272538d54340a871ed6fd4673.png') no-repeat center center; background-size:contain; }
+	
+.dd-transferencias li a .icon-menu-transfer-international,
+.navbar li.active a .icon-menu-transfer-international,
+.navbar li.active ul li a.active .icon-menu-transfer-international,
+.navbar li.active ul li a.active:hover .icon-menu-transfer-international{
+	background: url('../images/icons/ICONO_TransferenciaIinternacionalBlanco-e938d2cb3ddc8e2728b91072f06eb5b9.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-transfer-international,
+.navbar li.active ul li a:hover .icon-menu-transfer-international{ 
+	background: url('../images/icons/ICONO_TransferenciaIinternacionalAzul-ce678f3bd60392928b856fbd9f356932.png') no-repeat center center; background-size:contain; }
+
+
+
+.navbar li.active a .icon-menu-card,
+.navbar li.active ul li a.active .icon-menu-card,
+.navbar li.active ul li a.active:hover .icon-menu-card{
+	background: url('../images/icons/iconos-33-a668ce2eb2a90c27fb31ce9b3f1efb12.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-card,
+.navbar li.active ul li a:hover .icon-menu-card{ 
+	background: url('../images/icons/iconos-34-ea9307e2a6fd02a9f5312832fd92100b.png') no-repeat center center; background-size:contain; }
+	
+.navbar li.active a .icon-menu-prestamos,
+.navbar li.active ul li a.active .icon-menu-prestamos,
+.navbar li.active ul li a.active:hover .icon-menu-prestamos{
+	background: url('../images/icons/icons-prestamo-white-9ef3fed9e0b978ffc5e4e89ac7678a7b.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-prestamos,
+.navbar li.active ul li a:hover .icon-menu-prestamos{ 
+	background: url('../images/icons/icons-prestamo-afb05db3b07328f8782981715483cb34.png') no-repeat center center; background-size:contain; }	
+
+.navbar li.active a .icon-menu-cda,
+.navbar li.active ul li a.active .icon-menu-cda,
+.navbar li.active ul li a.active:hover .icon-menu-cda{
+	background: url('../images/icons/icons-cda2-white-39954058d90402ff132b8af9afc3d613.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active a .icon-menu-alias,
+.navbar li.active ul li a.active .icon-menu-alias,
+.navbar li.active ul li a.active:hover .icon-menu-alias{
+	background: url('../images/icons/Avatar-f718c4b82ae4c435da2682ad597fbb8f.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-cda,
+.navbar li.active ul li a:hover .icon-menu-cda{ 
+	background: url('../images/icons/icons-cda2-82055be52e034cae6c03e6ee60208021.png') no-repeat center center; background-size:contain; }
+
+.navbar li.active ul li a .icon-menu-alias,
+.navbar li.active ul li a:hover .icon-menu-alias{
+	background: url('../images/icons/Avatar-f718c4b82ae4c435da2682ad597fbb8f.png') no-repeat center center; background-size:contain; }
+
+
+.navbar li.active a .icon-menu-extract,
+.navbar li.active ul li a.active .icon-menu-extract,
+.navbar li.active ul li a.active:hover .icon-menu-extract{
+	background: url('../images/icons/icono_extracto_blanco-5ac509ce415922777a749c6fcad392d5.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-extract,
+.navbar li.active ul li a:hover .icon-menu-extract{ 
+	background: url('../images/icons/icono_extracto_azul-9abe6b2cca90a5cef9cc447a9fac5e98.png') no-repeat center center; background-size:contain; }
+	
+.navbar li.active a .icon-menu-compra-min,
+.navbar li.active ul li a.active .icon-menu-compra-min,
+.navbar li.active ul li a.active:hover .icon-menu-compra-min{
+	background: url('../images/icons/Familiar_Iconos_Compra_de_Minutos_Blanco-28062000d69e1766cc3c596c9c57cece.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-compra-min,
+.navbar li.active ul li a:hover .icon-menu-compra-min{ 
+	background: url('../images/icons/iconos-42-d66e1064b427db7aa8e34e35fdb6e85a.png') no-repeat center center; background-size:contain; }
+	
+.navbar li.active a .icon-menu-servicios,
+.navbar li.active ul li a.active .icon-menu-servicios,
+.navbar li.active ul li a.active:hover .icon-menu-servicios{
+	background: url('../images/icons/Familiar_Iconos_Servicios_Blanco-bf14b9dbe684369ee4dc0b206b79151c.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-servicios,
+.navbar li.active ul li a:hover .icon-menu-servicios{ 
+	background: url('../images/icons/Familiar_Iconos_Servicios_Azul-bc8f600ba52530624447db3283e528a8.png') no-repeat center center; background-size:contain; }
+	
+.navbar li.active a .icon-menu-donacion,
+.navbar li.active ul li a.active .icon-menu-donacion,
+.navbar li.active ul li a.active:hover .icon-menu-donacion{
+	background: url('../images/icons/Familiar_Iconos_Donacipones_Blanco-b1cdaeb12b4d949ef02a9e9a3cc72784.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-donacion,
+.navbar li.active ul li a:hover .icon-menu-donacion{ 
+	background: url('../images/icons/Familiar_Iconos_Donacipones_Azul-ab3bf1a7c6b640be5e81cef573f85901.png') no-repeat center center; background-size:contain; }
+	
+
+	
+.navbar li.active a:hover .icon-menu-config,
+.navbar li.active a .icon-menu-config,
+.navbar li.active ul li a.active .icon-menu-config,
+.navbar li.active ul li a.active:hover .icon-menu-config{ 
+	background: url('../images/icons/Familiar_Iconos_Config_Blanco-8aa318f66beb6d6e0e6fd19d664b83fe.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-config,
+.navbar li.active ul li a:hover .icon-menu-config{ 
+	background: url('../images/icons/Familiar_Iconos_Config_Azul-0c4941ee70997691cd4194079c9c2742.png') no-repeat center center; background-size:contain;
+	
+}
+
+.navbar li.active a:hover .icon-menu-opciones,
+.navbar li.active a .icon-menu-opciones,
+.navbar li.active ul li a.active .icon-menu-opciones,
+.navbar li.active ul li a.active:hover .icon-menu-opciones{ 
+	background: url('../images/icons/iconos_opciones_blanco-1f78c0bc3e60f452893270898c538190.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-opciones,
+.navbar li.active ul li a:hover .icon-menu-opciones{ 
+	background: url('../images/icons/iconos_opciones_azul-34aa646ef1c9b1f37f23e3282821cb12.png') no-repeat center center; background-size:contain;
+	
+}
+		
+.navbar li.active a:hover .icon-menu-aumento_linea_credito,
+.navbar li.active a .icon-menu-aumento_linea_credito,
+.navbar li.active ul li a.active .icon-menu-aumento_linea_credito,
+.navbar li.active ul li a.active:hover .icon-menu-aumento_linea_credito{ 
+	background: url('../images/icons/icono_Aumento_de_Linea_de_Credito_Blanco-b7f269b4865a38d617445849332174e7.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-aumento_linea_credito,
+.navbar li.active ul li a:hover .icon-menu-aumento_linea_credito{ 
+	background: url('../images/icons/icono_Aumento_de_Linea_de_Credito_Azul-a8711428178b6abfcb0d12c0b9c8426d.png') no-repeat center center; background-size:contain;
+	
+}
+
+.navbar li.active a:hover .icon-menu-solicitud,
+.navbar li.active a .icon-menu-solicitud,
+.navbar li.active ul li a.active .icon-menu-solicitud,
+.navbar li.active ul li a.active:hover .icon-menu-solicitud{ 
+	background: url('../images/icons/icono_Solicitudes_Vigentes_Blanco-1026a922317dcdb1fe0d32ad416ee0be.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-solicitud,
+.navbar li.active ul li a:hover .icon-menu-solicitud{ 
+	background: url('../images/icons/icono_Solicitudes_Vigentes_Azul-bea03f2a6828cb789d17bd79acecae01.png') no-repeat center center; background-size:contain;
+	
+}
+
+/*
+ * PRUEBAS
+ */
+.dd-transferencias li a .icon-menu-giros,
+.navbar li.active a .icon-menu-giros,
+.navbar li.active ul li a.active .icon-menu-transfer-other,
+.navbar li.active ul li a.active:hover .icon-menu-transfer-other{
+	background: url('../images/icons/ICONO_TransaferenciaOtraCuentaBlanco-5478618e98dff89e6c6e79cac6d5d595.png') no-repeat center center; background-size:contain;
+}
+/*
+**************
+-------
+**************
+*/
+/*12/2/20*/
+/****************ICONO DE GIROS (BLANCO) EN EL HEADER******************************************/
+/*Giros, en el header*/
+.dd-transferencias li a .icon-menu-giros-blanco {
+	background: url('../images/icons/icono_Giros_Blanco-98ac010afe6de44c5f8d07274dd22041.png') no-repeat center center; background-size: contain;
+}
+/*Giros nacionales, dentro de giros, giros familiar*/
+.icon-menu-giro-nac-blanco{
+	background: url('../images/icons/icono_Giros_Nac_Blanco-e132ebffc4a7c1ee7f215591481c62e1.png') no-repeat center center;
+	background-size:100%;
+}
+/*Giros Tigo y Claro, dentro de giros*/
+.icon-giros-telefonia-blanco{
+	background: url('../images/icons/iconos-41-8dc42e5e78fd3ca89ff3cfdf0f8d0398.png') no-repeat center center;
+	background-size:100%;
+}
+/****************FIN DE ICONO DE GIROS (BLANCO) EN EL HEADER******************************************/
+
+.navbar li.active a:hover .icon-menu-giros,
+.navbar li.active a .icon-menu-giros,
+.navbar li.active ul li a.active .icon-menu-giros,
+.navbar li.active ul li a.active:hover .icon-menu-giros{ 
+	background: url('../images/icons/icono_Giros_Blanco-98ac010afe6de44c5f8d07274dd22041.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-giros,
+.navbar li.active ul li a:hover .icon-menu-giros{ 
+	background: url('../images/icons/icono_Giros_Azul-a2b06824e69881cfdf9161b1bb1d8f47.png') no-repeat center center; background-size:contain;
+	
+}
+	
+.navbar li.active a:hover .icon-menu-chequera,
+.navbar li.active a .icon-menu-chequera,
+.navbar li.active ul li a.active .icon-menu-chequera,
+.navbar li.active ul li a.active:hover .icon-menu-chequera{ 
+	background: url('../images/icons/icono_Solicitud_Chequera_Blanco-3c188aaf9d7b9348b144bcaf33bb323a.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-chequera,
+.navbar li.active ul li a:hover .icon-menu-chequera{ 
+	background: url('../images/icons/icono_Solicitud_Chequera_Azul-808a1b00b0f263db3ff7e9eec3e12828.png') no-repeat center center; background-size:contain;
+	
+}
+
+.navbar li.active a:hover .icon-menu-config-tc,
+.navbar li.active a .icon-menu-config-tc,
+.navbar li.active ul li a.active .icon-menu-config-tc,
+.navbar li.active ul li a.active:hover .icon-menu-config-tc{ 
+	background: url('../images/icons/icono_Configuracion_de_tarjetas_de_credito_Blanco-9c70a6f1a6b7d29cb6844c222acc2a22.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-config-tc,
+.navbar li.active ul li a:hover .icon-menu-config-tc{ 
+	background: url('../images/icons/icono_Configuracion_de_tarjetas_de_credito_Azul-dc0cfe2596c03e54ec824a687a29a29b.png') no-repeat center center; background-size:contain;
+	
+}
+
+.navbar li.active a:hover .icon-menu-config-td,
+.navbar li.active a .icon-menu-config-td,
+.navbar li.active ul li a.active .icon-menu-config-td,
+.navbar li.active ul li a.active:hover .icon-menu-config-td{ 
+	background: url('../images/icons/icono-notificacion-blanco-f1c1f308e7d504162ae024be3381a59d.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-config-td,
+.navbar li.active ul li a:hover .icon-menu-config-td{ 
+	background: url('../images/icons/icono-notificacion-azul-56e75bda12777ab980274d83fa547820.png') no-repeat center center; background-size:contain;
+	
+}
+
+.navbar li.active a:hover .icon-menu-change-password,
+.navbar li.active a .icon-menu-change-password,
+.navbar li.active ul li a.active .icon-menu-change-password,
+.navbar li.active ul li a.active:hover .icon-menu-change-password{ 
+	background: url('../images/icons/icono_Cambio_de_Contrasena_Blanco-f300f776d5705f34befc05cf5a783172.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-change-password,
+.navbar li.active ul li a:hover .icon-menu-change-password{ 
+	background: url('../images/icons/icono_Cambio_de_Contrasena_Azul-dfda0f57f4c8e571d2154372d9fe93ec.png') no-repeat center center; background-size:contain;	
+}
+
+.navbar li.active a:hover .icon-menu-update-email,
+.navbar li.active a .icon-menu-update-email,
+.navbar li.active ul li a.active .icon-menu-update-email,
+.navbar li.active ul li a.active:hover .icon-menu-update-email{ 
+	background: url('../images/icons/icono_Actualizar_Correo_Electronico_Blanco-a1d9980457a0bc9833ec10d5c1102650.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-update-email,
+.navbar li.active ul li a:hover .icon-menu-update-email{ 
+	background: url('../images/icons/icono_Actualizar_Correo_Electronico_Azul-34460419668a28ec5e539b92d3686991.png') no-repeat center center; background-size:contain;	
+}
+.navbar li.active a:hover .icon-menu-gest-cuentas,
+.navbar li.active a .icon-menu-gest-cuentas,
+.navbar li.active ul li a.active .icon-menu-gest-cuentas,
+.navbar li.active ul li a.active:hover .icon-menu-gest-cuentas{ 
+	background: url('../images/icons/Gestionar_Cuentas_Blanco_Grande-d0d013e4f7ccde254fd0f2c52e685672.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-gest-cuentas,
+.navbar li.active ul li a:hover .icon-menu-gest-cuentas{ 
+	background: url('../images/icons/Gestionar_Cuentas_Azul_grande-baef72edce24cabb023fb79605c6d8d9.png') no-repeat center center; background-size:contain;	
+}
+
+.navbar li.active a:hover .icon-menu-solicitud-tc,
+.navbar li.active a .icon-menu-solicitud-tc,
+.navbar li.active ul li a.active .icon-menu-solicitud-tc,
+.navbar li.active ul li a.active:hover .icon-menu-solicitud-tc{ 
+	background: url('../images/icons/icono_Solicitud_TC_Blanco-f58642f45b83a0e6778b1af94f964ab8.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-solicitud-tc,
+.navbar li.active ul li a:hover .icon-menu-solicitud-tc{ 
+	background: url('../images/icons/icono_Solicitud_TC_Azul-144aeb3bc6236e275d8928324af06a65.png') no-repeat center center; background-size:contain;
+	
+}
+
+.navbar li.active a:hover .icon-menu-giro-nac,
+.navbar li.active a .icon-menu-giro-nac,
+.navbar li.active ul li a.active .icon-menu-giro-nac,
+.navbar li.active ul li a.active:hover .icon-menu-giro-nac{ 
+	background: url('../images/icons/icono_Giros_Nac_Blanco-e132ebffc4a7c1ee7f215591481c62e1.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-giro-nac,
+.navbar li.active ul li a:hover .icon-menu-giro-nac{ 
+	background: url('../images/icons/icono_Giros_Nac_Azul-bc980a892e904e7421c159029263363a.png') no-repeat center center; background-size:contain;	
+}
+
+.navbar li.active a:hover .icon-menu-giro-internac,
+.navbar li.active a .icon-menu-giro-internac,
+.navbar li.active ul li a.active .icon-menu-giro-internac,
+.navbar li.active ul li a.active:hover .icon-menu-giro-internac{ 
+	background: url('../images/icons/icono_Giros_Internac_Blanco-2155ddecb83321797a576ba0d0d44a98.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-giro-internac,
+.navbar li.active ul li a:hover .icon-menu-giro-internac{ 
+	background: url('../images/icons/icono_Giros_Internac_Azul-72478f799fafa4c6b0003995aaaf41be.png') no-repeat center center; background-size:contain;	
+}
+
+.navbar li.active a:hover .icon-menu-solicitud-prestamo,
+.navbar li.active a .icon-menu-solicitud-prestamo,
+.navbar li.active ul li a.active .icon-menu-solicitud-prestamo,
+.navbar li.active ul li a.active:hover .icon-menu-solicitud-prestamo{ 
+	background: url('../images/icons/icono_Solicitud_de_Prestamo_Blanco-1a8dfd21c56fa39bfe068fbea8f7c956.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-solicitud-prestamo,
+.navbar li.active ul li a:hover .icon-menu-solicitud-prestamo{ 
+	background: url('../images/icons/icono_Solicitud_de_Prestamo_Azul-c4a8441b02aa4fa20d728a7fc8c0c4ad.png') no-repeat center center; background-size:contain;
+	
+}
+
+.navbar li.active a:hover .icon-menu-scheduled,
+.navbar li.active a .icon-menu-scheduled,
+.navbar li.active ul li a.active .icon-menu-scheduled,
+.navbar li.active ul li a.active:hover .icon-menu-scheduled{ 
+	background: url('../images/icons/icono_Transferencias_Agendadas_Blanco-7e98a613dd49f66a508acb8ae8bd1d53.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-scheduled,
+.navbar li.active ul li a:hover .icon-menu-scheduled{ 
+	background: url('../images/icons/icono_Transferencias_Agendadas_Azul-124b6f4687c8a3f1b4ffa7591595fde0.png') no-repeat center center; background-size:contain;
+	
+}
+
+
+.navbar li.active a:hover .icon-menu-transfer-previous,
+.navbar li.active a .icon-menu-transfer-previous,
+.navbar li.active ul li a.active .icon-menu-transfer-previous,
+.navbar li.active ul li a.active:hover .icon-menu-transfer-previous{ 
+	background: url('../images/icons/Transferencias_Anteriores_Blanco-439e7b660d24931d7ea83eb2993e609d.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-transfer-previous,
+.navbar li.active ul li a:hover .icon-menu-transfer-previous{ 
+	background: url('../images/icons/Transferencias_Anteriores_Azul-2b625722fe6d0f3b4d6a89bdf010e345.png') no-repeat center center; background-size:contain;
+	
+}
+
+.navbar li.active a:hover .icon-menu-reimpresion-desbloqueo,
+.navbar li.active a .icon-menu-reimpresion-desbloqueo,
+.navbar li.active ul li a.active .icon-menu-reimpresion-desbloqueo,
+.navbar li.active ul li a.active:hover .icon-menu-reimpresion-desbloqueo{ 
+	background: url('../images/icons/icono_Reimpresion_Desbloqueo_de_PIN_de_TC_Blanco-00b04f6e6dcd47531027a04c0342ac88.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-reimpresion-desbloqueo,
+.navbar li.active ul li a:hover .icon-menu-reimpresion-desbloqueo{ 
+	background: url('../images/icons/icono_Reimpresion_Desbloqueo_de_PIN_de_TC_Azul-18b5d93ca8b2fb7e72561d34fc1215f1.png') no-repeat center center; background-size:contain;
+	
+}
+	
+.navbar li.active a:hover .icon-menu-transfer,
+.dd-transferencias li a .icon-menu-transfer,
+.navbar li.active a .icon-menu-transfer,
+.navbar li.active ul li a.active .icon-menu-transfer,
+.navbar li.active ul li a.active:hover .icon-menu-transfer{ 
+	background: url('../images/icons/iconos-35-38d240287fe97208f606da0e82f3cca7.png') no-repeat center center; background-size:contain; 
+}
+
+.navbar li.active ul li a .icon-menu-transfer,
+.navbar li.active ul li a:hover .icon-menu-transfer{ 
+	background: url('../images/icons/iconos-36-61456baf2d02f0a3fb03898eae91acab.png') no-repeat center center; background-size:contain; }
+
+.navbar li.active a:hover .icon-menu-pagos,
+.navbar li.active a .icon-menu-pagos,
+.navbar li.active ul li a.active .icon-menu-pagos,
+.navbar li.active ul li a.active:hover .icon-menu-pagos{ 
+	background: url('../images/icons/iconos-39-a3ed8e8583967808787913eb141f3648.png') no-repeat center center; background-size:contain; 
+}
+.navbar li.active ul li a .icon-menu-pagos,
+.navbar li.active ul li a:hover .icon-menu-pagos{ background: url('../images/icons/iconos-40-a017b4e505048b31b6964ac5d748bf54.png') no-repeat center center; background-size:contain; }
+
+.navbar li.active a:hover .icon-menu-pin,
+.navbar li.active a .icon-menu-pin,
+.navbar li.active ul li a.active .icon-menu-pin,
+.navbar li.active ul li a.active:hover .icon-menu-pin{ 
+	background: url('../images/icons/iconos-39-a3ed8e8583967808787913eb141f3648.png') no-repeat center center; background-size:contain; 
+}
+.navbar li.active ul li a .icon-menu-pin,
+.navbar li.active ul li a:hover .icon-menu-pin{ background: url('../images/icons/iconos-40-a017b4e505048b31b6964ac5d748bf54.png') no-repeat center center; background-size:contain; }
+
+.navbar li.active a .icon-menu-transacciones-pendientes,
+.navbar li.active ul li a.active .icon-menu-transacciones-pendientes,
+.navbar li.active ul li a.active:hover .icon-menu-transacciones-pendientes{
+	background: url('../images/icons/ICONO_Transacciones_PendientesMenu_Lateral_Blanco-2767ad0c183a4658a103675ad4fd3c38.png') no-repeat center center; background-size:contain;
+}
+
+.navbar li.active ul li a .icon-menu-transacciones-pendientes,
+.navbar li.active ul li a:hover .icon-menu-transacciones-pendientes{ 
+	background: url('../images/icons/ICONO_Transacciones_PendientesMenu_Lateral_Azul-5a74c01867b6cb3e00328f006b0bb5e4.png') no-repeat center center; background-size:contain; }
+	
+.payment-loans-white{ 
+	background: url('../images/icons/iconos-39-a3ed8e8583967808787913eb141f3648.png') no-repeat center center; background-size:contain; 
+}
+
+.payment-cards-white{ 
+	background: url('../images/icons/iconos-33-a668ce2eb2a90c27fb31ce9b3f1efb12.png') no-repeat center center; background-size:contain; 
+}
+
+.icon-adjunto {
+	background: url('../images/icons/Icono_Adjunto-228be9bb7db1f9c4e7618dd9a057db2e.png') no-repeat;
+	display: inline-block;
+	height: 30px;
+	width: 15px;
+	background-size: 100%;
+	vertical-align: middle;
+	color: #004185 !important;
+}
