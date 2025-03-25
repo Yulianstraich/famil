@@ -1,0 +1,611 @@
+Number.prototype.toMoney = function (decimals, decimal_sep, thousands_sep) {
+    var n = this,
+        c = isNaN(decimals) ? 2 : Math.abs(decimals), //if decimal is zero we must take it, it means user does not want to show any decimal
+        d = decimal_sep || '.', //if no decimal separator is passed we use the dot as default decimal separator (we MUST use a decimal separator)
+        t = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep, //if you don't want to use a thousands separator you can pass empty string as thousands_sep value
+
+        sign = (n < 0) ? '-' : '',
+
+    //extracting the absolute value of the integer part of the number and converting to string
+        i = parseInt(n = Math.abs(n).toFixed(c)) + '',
+
+        j = ((j = i.length) > 3) ? j % 3 : 0;
+    return sign + (j ? i.substr(0, j) + t : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : '');
+}
+
+function validateDate(fld, e) {
+    //tecla = (document.all) ? e.keyCode : e.which;
+
+    var regValidDate =/^[0-9\/]+$/;
+
+    var val = $(fld).val();
+    val= replaceAll(val,'-','/');
+
+    if(!val.match(regValidDate))
+        val = val.slice(0, val.length -1);
+
+	$(fld).val(val);
+
+    return;
+
+}
+
+function formatFecha(fld, e){
+
+    tecla = (document.all) ? e.keyCode : e.which;
+
+    //Tecla de retroceso para borrar, siempre la permite
+    if (tecla == 8 || tecla == 46 || tecla == 37 || tecla==39) {
+        return true;
+    }
+
+
+    var string = $(fld).val();
+    string = replaceAll(string,'/','');
+    string = replaceAll(string,'-','');
+    var result="";
+
+    for(i=0; i < string.length; i++){
+
+
+        if(result.length == 10 )
+            break;
+
+        result += string[i];
+
+        if(i>0 && i<5 && (i+1)%2 == 0 )
+            result +='/';
+    }
+
+    $(fld).val(result);
+    return;
+}
+
+function replaceAll(str, find, replace) {
+    return str.replace(new RegExp(find, 'g'), replace);
+}
+
+
+function validateEmail(email) 
+{   
+    var re = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    return re.test(email);
+}
+function soloNumero(fld, e){	
+	var nums = $(fld).val();
+
+	if ((nums!='') && (!nums.match(regSoloNumeros)))
+		nums = "";
+	
+	 $(fld).val(nums);
+	 return;
+}
+
+function toUpper(fld, e){	
+	$(fld).val($(fld).val().toUpperCase());	
+	 return ;
+}
+
+
+function countCharacters(fld, e) {	
+	var cant = $(fld).val().length;
+	$(fld).siblings('p').html(cant+"/140 caracteres");  //hermano parrafo
+	if(cant==140)
+		$(fld).siblings('p').css('color','#e4353c');
+	else
+		$(fld).siblings('p').css('color','#555');
+}
+
+function phoneFormat(fld, e) {
+	
+	var phone = $(fld).val();
+	
+	if(isNaN(phone) || phone.indexOf(" ")!=-1)
+		 phone= phone.slice(0, phone.length -1);
+	
+	 if(phone.length > 15 )
+		 phone= phone.substr(0, 15);
+	 
+	 $(fld).val(phone);
+	 return;
+}
+
+
+function tokenFormat(fld, e) {
+	
+	var token = $(fld).val();
+	
+	if(isNaN(token))
+		token= "";		
+	
+	 if(token.length > 8 )
+		 token= token.substr(0, 8);
+	 
+	 $(fld).val(token);
+	 return;
+}
+
+function localCurrencyFormat(fld, e) {
+	
+	var amount = $(fld).val();
+	
+	if(amount == "") return;
+	
+	amount = amount.replace(/\./g,"");
+	
+	var monto = amount;
+    if (typeof amount === "string") {
+        monto = parseFloat(amount);
+        if(isNaN(monto)){
+        	monto = 0;
+        }
+    }
+    
+    monto = monto.toMoney(0, ",", ".");
+    
+    $(fld).val(monto);
+    
+    return;
+	
+	
+/*		var milSep = '.';
+		var decSep = ','; 
+		var sep = 0;
+		var key = '';
+		var i = j = 0;
+		var len = len2 = 0;
+		var strCheck = '0123456789';
+		var aux = aux2 = '';
+		
+		fld.setAttribute('type','text');
+		
+		if(window.event) // for IE
+			var whichCode = window.event.keyCode;
+		else if(e.which) // for other browsers
+			var whichCode = e.which;
+		//var whichCode = (window.Event) ? e.which : e.keyCode;
+	
+		if (whichCode == 13) return true;  // Enter
+		if (e.keyCode == 9) return true // tab
+		if (whichCode == 8){ // Delete
+			fld.value= fld.value.substr(0, fld.value.length-1);
+		}
+		//whichCode -=48;
+		key = String.fromCharCode(whichCode);  // Get key value from key code
+		if (strCheck.indexOf(key) == -1 && whichCode!=8) return false;  // Not a valid key
+		if(whichCode==8){
+			key="";
+		}
+		if(fld.id=="monto" || fld.name=="amount"){
+			var sep= new Array(); 
+			sep = fld.value.split('.');
+			if(sep[0]!="")
+				fld.value='';
+			for( i = 0 ; i< sep.length ; i++){
+				fld.value += sep[i]; 
+			}
+		
+		len = fld.value.length;
+		for(i = 0; i < len; i++)
+			if ((fld.value.charAt(i) != '0') && (fld.value.charAt(i) != decSep)) break;
+		aux = '';
+		for(; i < len; i++)
+			if (strCheck.indexOf(fld.value.charAt(i))!=-1) aux += fld.value.charAt(i);
+		aux += key;
+		len = aux.length;
+		if (len == 0) fld.value = '';
+		//  if (len == 1) fld.value = '0'+ decSep + '0' + aux;
+		//  if (len == 2) fld.value = '0'+ decSep + aux;
+		if (len == 1) fld.value = aux;
+		if (len == 2) fld.value = aux;
+		if (len > 2) {
+			aux2 = '';
+	//		for (j = 0, i = len - 3; i >= 0; i--) {    
+			for (j = 0, i = len - 1; i >= 0; i--) {
+				if (j == 3) {
+					aux2 += milSep;
+					j = 0;
+				}
+				aux2 += aux.charAt(i);
+				j++;
+			}
+			fld.value = '';
+			len2 = aux2.length;
+			for (i = len2 - 1; i >= 0; i--)
+				fld.value += aux2.charAt(i);
+	//		fld.value += decSep + aux.substr(len - 2, len);monto = monto.toMoney(2, ",", ".");
+	//		fld.value += aux.substr(len - 2, len);
+		}
+		return false;
+	}
+	return;*/
+}
+
+function currencyFormat(fld, e) {
+	
+	
+	var amount = $(fld).val();
+	
+	if(amount == "") return;
+	
+	if(amount.replace(/[^,]/g, "").length > 1 || amount===","){
+		$(fld).val(amount.slice(0,amount.length-1));
+		return;
+	}
+	
+		
+	var hasPoint = amount.indexOf(",");
+	
+	
+	var valPArse = amount.split(",");;
+	var pars1 = valPArse[0];
+	var pars2 = valPArse[1];
+	
+	var monWithPoint = 	amount;
+	amount = getCurrencyValue(amount);	
+	var monto = amount;
+    if (typeof amount === "string" &&  parseFloat(amount)) {
+        monto = parseFloat(amount);
+    }else
+    	monto = 0;   
+    if(pars2 == undefined || pars2 == ""){
+    	if(hasPoint < 0){
+    		monto = monto.toMoney(0, ",", ".");       		
+    	}else{
+    		 $(fld).val(monWithPoint);    		    
+    		 return;
+    	}
+    }else{
+    	if(pars2.length == 1){
+    		monto = monto.toMoney(1, ",", ".");    		  		
+        }else{
+        	monto = monto.toMoney(2, ",", ".");
+        }    	
+    } 
+    $(fld).val(monto);   
+    return;
+	
+	
+	
+	/*var milSep = '.';
+	var decSep = ','; 
+	var sep = 0;
+	var key = '';
+	var i = j = 0;
+	var len = len2 = 0;
+	var strCheck = '0123456789';
+	var aux = aux2 = '';
+//	var whichCode = (window.Event) ? e.which : e.keyCode;	
+//	fld.setAttribute('type','text');
+	if(window.event) // for IE
+		var whichCode = window.event.keyCode;
+	else if(e.which) // for other browsers
+		var whichCode = e.which;	
+
+	var hayDecSep = (fld.value.indexOf(decSep) != -1);
+	if (whichCode == 13) return true;  // Enter
+	if (e.keyCode == 9) return true // tab
+	if (whichCode == 8){ // Delete
+	if (hayDecSep) return true;
+		fld.value= fld.value.substr(0, fld.value.length-1);
+	}
+	key = String.fromCharCode(whichCode);  // Get key value from key code
+	if (strCheck.indexOf(key) == -1 && whichCode!=8 && key!=decSep && key!=milSep ){
+			return false;  // Not a valid key
+	}
+	if(whichCode==8){
+		key="";
+	}
+	if (key == ".") key=","; // remplazo los '.' por ','
+	len = fld.value.length;
+	for(i = 0; i < len; i++)
+		if ((fld.value.charAt(0) == '0') && len >= 1 && ((key == decSep) || hayDecSep))
+			break;
+		else if ((fld.value.charAt(i) != '0') && (fld.value.charAt(i) != decSep)) 
+			break;
+		aux = '';
+	for(; i < len; i++){
+		if (strCheck.indexOf(fld.value.charAt(i))!=-1) aux += fld.value.charAt(i);
+		if (hayDecSep && fld.value.charAt(i)==",") aux += fld.value.charAt(i);
+	}
+	if (!hayDecSep && key == decSep) {
+		aux += decSep;
+		hayDecSep=true;
+	}
+	if ( !hayDecSep && key != decSep) {
+		aux += key;
+		len = aux.length;
+		if (len == 0) fld.value = '';
+		if (len == 1) fld.value = aux;
+		if (len == 2) fld.value = aux;
+		if (len > 2) {
+			aux2 = '';
+			for (j = 0, i = len - 1; i >= 0; i--) {
+				if (j == 3) {
+					aux2 += milSep;
+					j = 0;
+				}
+				aux2 += aux.charAt(i);
+				j++;
+			}
+			fld.value = '';
+			len2 = aux2.length;
+			for (i = len2 - 1; i >= 0; i--)
+				fld.value += aux2.charAt(i);
+		}
+		return false;
+	}
+	
+	else{
+		var coma;
+		if (hayDecSep) {
+			coma = aux.indexOf(decSep);
+			if (aux.substr(coma).length >2){
+				;
+			}else if (key!=decSep){
+				aux += key
+			}
+		}
+		len = aux.length;
+		lenAfterDecSep = aux.substr(coma).length; // || 1 || 2 || 3
+		if (len == 0) fld.value = '';
+		if (len >= 1) fld.value = aux ; 
+		//if (len == 2) fld.value = '0'+ decSep + aux;
+			if (len > 2) {
+				aux2 = '';
+				for (j = 0, i =len-lenAfterDecSep-1; i>=0; i--) {
+					if (j == 3) {
+						aux2 += milSep;
+						j = 0;
+					}
+					aux2 += aux.charAt(i);
+					j++;
+				}
+				fld.value="";
+				for (i =1 ; i<=aux2.length; i++){
+					fld.value += aux2.charAt(aux2.length-i);
+				}
+				//fld.value = aux2;
+				len2 = fld.value.length;
+				fld.value += aux.substr(coma);
+					//fld.value += aux2.charAt(i);
+				
+			}
+		
+	}
+		return false;*/
+}
+
+function getCurrencyValue(monto){
+	if(monto == undefined)
+		return monto;
+	
+	monto = monto.replace(/\./g, '');//chau puntos
+	monto = monto.replace(/\,/g, '.');//parte decimal
+	return monto;
+}
+
+function getCurrencyValueFormat(monto){
+	if(monto == undefined)
+		return monto;
+	
+	var val = getCurrencyValue(monto);
+	
+	if(val < 1000){
+		return monto;
+	}
+	
+	var partes = val.split('.');
+	var parteDecimal = '';
+	if(partes[1]!=null){
+		parteDecimal = partes[1]; 
+	}
+	parteEntera = partes[0];
+
+	var tmp = parteEntera%1000;
+	var res = 0;
+	var pv = true;
+	while(tmp>0){
+		parteEntera = parteEntera /1000;
+		if(pv){
+			res = tmp;
+			pv = false;
+		}else{
+			res = tmp + '.' + res;
+		}
+		tmp = parteEntera%1000;
+		
+	}
+	return res;	
+}
+
+function getCurrencyValueFormat(monto){
+	var val = getCurrencyValue(new String(monto));
+	if(val < 1000){
+		return monto;
+	}
+	
+	var partes = val.split('.');
+	var parteDecimal = '';
+	if(partes[1]!=null){
+		parteDecimal = partes[1]; 
+	}
+	parteEntera = partes[0];
+
+	var puntos = parteEntera.length / 3;
+	
+	var from = parteEntera.length -3;
+	var to    = parteEntera.length;
+	var res = '';
+	var i = 0;
+	var pv = true;
+	while(i<puntos){
+		if(pv){
+			res = parteEntera.substring(from, to) ;
+			pv = false;
+		}else{
+			res = parteEntera.substring(from, to).concat('.').concat(res);
+		}
+		
+		from = from - 3;
+		to = to - 3;
+		i++;
+	}
+	
+	if(partes[1]!=null){
+		res = res.concat(',').concat(partes[1]); 
+	}
+
+	return res;	
+}
+
+
+var regLetrasPermitidas=/^[0-9a-zA-ZáéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ\s]+$/;
+var regSoloNumeros=/^[0-9]+$/;
+var regLetrasExcept= /^[0-9a-zA-ZáéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ/_\-.\s,:;°º]+$/;
+var regMonto=/^[0-9\s,]+$/;
+
+var funcSoloLetrasPermitidas=(function (string) {
+	if ((string!='') && (string.match(regLetrasPermitidas))) {
+		return true;
+	}
+	return false;
+});
+
+var funcLetrasExceptPermitidas = (function(string){
+    if ((string!='') && (string.match(regLetrasExcept))) {
+        return true;
+    }
+    return false;
+});
+
+var funcSoloNumeros=(function (string) {
+	if ((string!='') && (string.match(regSoloNumeros))) {
+		return true;
+	}
+	return false;
+});
+
+
+function formatAmount(amount, currency, withSymbol) {
+    var monto = amount;
+    if (typeof amount === "string") {
+        monto = parseFloat(amount);
+    }
+    if (currency == 6900 || currency == 0 || currency == "GS" || currency == "PYG") {
+        monto = monto.toMoney(0, ",", ".");
+    } else {
+        monto = monto.toMoney(2, ",", ".");
+    }
+
+    if (withSymbol) {
+        return getCurrencyName(currency) + ' ' + monto;
+    } else {
+        return monto;
+    }
+}
+
+
+function getFormattedStringDate(stringDate) {
+
+    var year = date.getFullYear();
+
+    var month = (1 + date.getMonth()).toString();
+    month = month.length > 1 ? month : '0' + month;
+
+    var day = date.getDate().toString();
+    day = day.length > 1 ? day : '0' + day;
+
+    return day + '/' + month + '/' + year;
+}
+
+
+var regSoloNumeros=/^[0-9]+$/;
+var regFecha=/^[0-9/]+$/;
+
+var regLetrasNombre= /^[0-9a-zA-Z áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_\-]+$/;
+
+function soloLetrasNombre(fld, e){
+    return controltag(e, regLetrasNombre);
+}
+
+
+var regNumerosLetrasDoc= /^[0-9a-zA-Z\-]+$/;
+
+function soloNumeroLetrasDoc(fld, e){
+    return controltag(e, regNumerosLetrasDoc);
+}
+
+var regNumerosLetrasAlias= /^[0-9a-zA-Z áéíóúàèìòùÀÈÌÒÙÁÉÍÓÚñÑüÜ_\-]+$/;
+
+function soloNumeroLetrasAlias(fld, e){
+    return controltag(e, regNumerosLetrasAlias);
+}
+
+function campoSoloNumero(fld, e){
+    return controltag(e, regSoloNumeros);
+}
+
+
+function campoFecha(fld, e) {
+    return controltag(e, regFecha);
+}
+
+
+function campoMonto(fld, e){
+	return controltag(e, regMonto);
+}
+
+var regNumeroCuentaTercero=/^[0-9\-]+$/;
+
+function funcNumeroCuentaTercero(fld, e){
+    return controltag(e, regNumeroCuentaTercero);
+}
+
+function controltag(e, patron) {
+    var tecla = (document.all) ? e.keyCode : e.which;
+
+    if (tecla==8) return true; // para la tecla de retroseso
+    else if (tecla==0||tecla==9)  return true; //<-- PARA EL TABULADOR-> su keyCode es 9 pero en tecla se esta transformando a 0 asi que porsiacaso los dos
+    var te = String.fromCharCode(tecla);
+    return patron.test(te);
+}
+
+function onChangeValidationFieldCharacters(fld,patron) {
+	var val = fld.val();
+	var newVal='';
+	for (var i =0;i<val.length;i++){
+		if(patron.test(val[i]))
+			newVal+= val[i];
+	}
+	return newVal;
+}
+
+// Variable to hold the timer
+let currencyFormatTimer;
+function USDCurrencyFormat(fld, e) {
+	// Clear any existing timer to prevent immediate formatting
+	clearTimeout(currencyFormatTimer);
+
+	currencyFormatTimer = setTimeout(function () {
+		var amount = $(fld).val();
+
+		if (amount === "") return;
+
+		// Remove commas (thousands separators) for parsing, keeping the period as the decimal separator
+		amount = amount.replace(/,/g, "");
+
+		// Now parse it as a float for further processing
+		var monto = parseFloat(amount);
+		if (isNaN(monto)) {
+			monto = 0;
+		}
+
+		// Format with toMoney to apply U.S. number format (thousands with comma, decimal with period)
+		monto = monto.toMoney(2, ".", ",");
+
+		$(fld).val(monto);
+	}, 1000); // Delay of 1500ms (adjustable)
+
+}
+

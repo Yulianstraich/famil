@@ -1,0 +1,351 @@
+/* Teclado Virtual para el Banco Familiar*/
+$(document).ready(function(){
+	$('#password').on('change',function(){
+		$(this).focus();
+		if($(this).val()=="")
+			$(this).removeClass('password-zise');
+		else if(! $(this).hasClass('password-zise'))
+			$(this).addClass('password-zise');
+	});	
+});
+
+	var mouseMoved= true;
+
+	var familiar =  [ "B A E D C", 
+	                  "1 2 3 4 5 " +
+	                  "6 7 8 9 0",
+	                  "Borrar","X"];
+	
+	//randomizar el teclado y crear el teclado
+	buildKeyboard = function(detach, attachTo, contrasenaInput, fromJsp, container , newSet){
+		if (fromJsp==true){
+			container = $('<div />')
+			.attr({'id': 'contenedor' + attachTo.attr("id")});
+			 newSet = $('<div />')
+			.attr('id','botones' + attachTo.attr("id"))
+			.attr('name', 'teclado-familiar')
+			.addClass('keyboard-keyset')
+			.show()
+		
+		}else if (container == null && newSet == null){
+			container = $("#contenedor" +  attachTo.attr("id"));
+			newSet = $("#botones" + attachTo.attr("id")); 
+		}
+		
+		if (detach == true){   
+			container.empty();
+			newSet.empty();
+		}
+		for ( var i = 0 ; i<4; i++){
+			currentSet = $.trim(familiar[i]).replace(/\{(\.?)[\s+]?:[\s+]?(\.?)\}/g,'{$1:$2}');
+			keys = currentSet.split(/\s+/);
+			if (i<2){
+				if (i==1){
+					//keys = ['1','2','3','4','5','6','7','8','9','0']
+					var laux = ['','','','','','','','','',''];
+					for ( key = 0; key < keys.length; key++ ) {
+						var bandera = true; 
+						while (bandera) {
+							var ran_number = Math.floor(Math.random()*10);
+							if(laux[ran_number]=="") {
+							  laux[ran_number] = keys[key];
+							  bandera = false;
+							}
+							
+						}	
+					}
+				}else{
+					//keys = ['A','B','C','D','E']
+					var laux = ['','','','',''];
+					for ( key = 0; key < keys.length; key++ ) {
+						var bandera = true; 
+						while (bandera) {
+							var ran_number = Math.floor(Math.random()*5);
+							if(laux[ran_number]=="") {
+							  laux[ran_number] = keys[key];
+							  bandera = false;
+							}
+							
+						}	
+					}
+				}
+				keys = laux;
+			}
+			retorno = agregar(keys, contrasenaInput , newSet , attachTo );
+			newSet = retorno[0];
+			contrasenaInput = retorno[1];
+		}
+		
+		newSet.appendTo(container);
+		container.appendTo(attachTo);		
+		/*container.find('.keyboard-button').mouseover( function () {
+			// mouseenter
+			if(mouseMoved){
+				var keys = newSet.children();
+				for (i=0; i<keys.length-2; i++){
+					keys[i].value = '*';
+				}
+			}
+			return false;
+		});
+		container.find('.keyboard-button').mouseout( function () { 			
+			// mouseenter
+			mouseMoved= true;
+			var keys = newSet.children();
+			for (i=0; i<keys.length-2; i++){
+				keys[i].value = keys[i].name;
+			}
+			return false;
+		});
+		container.find('.keyboard-button').mouseleave( function () { 			
+			// mouseenter
+			mouseMoved= true;
+			var keys = newSet.children();
+			for (i=0; i<keys.length-2; i++){
+				keys[i].value = keys[i].name;
+			}
+			return false;
+		});
+		container.find('.keyboard-button').mousedown( function () { 			
+			// mouseenter
+			mouseMoved= false;
+			var keys = newSet.children();
+			for (i=0; i<keys.length-2; i++){
+				keys[i].value = '*';
+			}
+			return false;
+		});
+		container.find('.keyboard-button').mousemove( function () {
+			mouseMoved= true;
+		});*/
+		/*container.find('.keyboard-button').mouseenter( function () { 			
+			// mouseenter
+			var keys = newSet.children();
+			for (i=0; i<keys.length-2; i++){
+				keys[i].value = '*';
+				//keys[i].value = keys[i].name;
+			}
+			return false;
+		});
+		container.mousedown( function () { 			
+			// mouseenter
+			var keys = newSet.children();
+			for (i=0; i<keys.length-2; i++){
+				keys[i].value = keys[i].name;
+			}
+			return false;
+		});
+		container.mouseenter( function () { 			
+			// mouseenter
+			var keys = newSet.children();
+			for (i=0; i<keys.length-2; i++){
+				keys[i].value = keys[i].name;
+			}
+			return false;
+		});*/
+//		newSet.mouseover( function () {
+//			// mouseenter
+//			var keys = newSet.children();
+//			for (i=0; i<keys.length-2; i++){
+//				keys[i].value = '*';
+//			}
+//			return false;
+//		});
+		/*container.mouseleave( function (e) {			
+			//mouseleave
+			var keys = newSet.children();
+			for (i=0; i<keys.length-2; i++){
+				//keys[i].value = '*';
+				keys[i].value = keys[i].name;
+			}
+			return false;
+		});*/
+		
+		return contrasenaInput;
+	}
+	
+	agregar = function (keys, inputContrasena ,botones ,attach ){
+		
+		for (var j=0; j<keys.length; j++){
+			keyBtn = $('<input />')
+			.attr({ 'value': keys[j] , 'id': 'boton-'+keys[j], 'name': keys[j] , 'type':'button'})
+			//.attr( 'onclick','javascript:clickeado(this)')
+			.addClass('keyboard-button')
+			.show();
+			if (keys.length==1){
+				keyBtn
+				.addClass('keyboard-widekey');
+				if(keys=="Borrar"){ 
+					keyBtn.addClass('pull-right');
+					keyBtn.addClass('boton-borrar');
+					}
+				if(keys=="X"){ 
+					keyBtn.addClass('pull-left');
+					keyBtn.addClass('boton-cerrar');
+					}
+			}
+			keyBtn.mouseup(function(){	
+			 	value = $(this).attr("name");
+			      if (value!= "Borrar" && value != "X"){
+				      pass = inputContrasena.val();
+				      if( pass == "undefined") pass ="";
+				      pass = pass.concat(value);
+				      inputContrasena.val(pass).trigger('change');
+			      }else if (value == "Borrar"){
+			    	  inputContrasena.val("").trigger('change');
+			      }else if(value="X"){
+			    	  pass = pass.substring(0,inputContrasena.val().length-1);
+			    	  inputContrasena.val(pass).trigger('change');
+			      }else{
+			      return;
+			      }
+			    
+			     // buildKeyboard(true,attach, inputContrasena , false );
+			      return false;
+		   		})
+		   		.appendTo(botones);
+			if (j==keys.length-1 || j==keys.length-6){ // last
+				if(keys!="X" && keys!="Borrar"){
+					botones.append('<br />');
+				}
+			}
+		}
+
+		return [botones, inputContrasena];
+	}
+	
+	
+	 
+	
+	/* Teclado Virtual para el Banco Familiar - sólo números - */
+
+	var familiar2 =  ["1 2 3 4 5 6 7 8 9 0", "Borrar"];
+	
+	//randomizar el teclado y crear el teclado
+	buildKeyboardOnlyNumbers = function(detach, attachTo, contrasenaInput, fromJsp, container , newSet){
+		if (fromJsp==true){
+			container = $('<div />')
+			.attr({'id': 'contenedor' + attachTo.attr("id")});
+			
+			 newSet = $('<div />')
+			.attr('id','botones' + attachTo.attr("id"))
+			.attr('name', 'teclado-familiar')
+			.addClass('keyboard-keyset')
+			.addClass('keyboard-keyset2')
+			.show()
+		
+		}else if (container == null && newSet == null){
+			container = $("#contenedor" +  attachTo.attr("id"));
+			newSet = $("#botones" + attachTo.attr("id")); 
+		}
+		
+		if (detach == true){   
+			container.empty();
+			newSet.empty();
+		}
+		for ( var i = 0 ; i<2; i++){
+			currentSet = $.trim(familiar2[i]).replace(/\{(\.?)[\s+]?:[\s+]?(\.?)\}/g,'{$1:$2}');
+			keys2 = currentSet.split(/\s+/);
+			
+			if (i==0){
+				//keys = ['1','2','3','4','5','6','7','8','9','0']
+				var laux = ['','','','','','','','','',''];
+				for ( key = 0; key < keys2.length; key++ ) {
+					var bandera = true; 
+					while (bandera) {
+						var ran_number = Math.floor(Math.random()*10);
+						if(laux[ran_number]=="") {
+						  laux[ran_number] = keys2[key];
+						  bandera = false;
+						}
+						
+					}	
+				}
+			}
+			
+			if (i==0){
+				keys2 = laux;
+			}
+			retorno = agregar2(keys2, contrasenaInput , newSet , attachTo);
+			newSet = retorno[0];
+			contrasenaInput = retorno[1];
+		}
+		
+		
+		newSet.appendTo(container);
+		container.appendTo(attachTo);
+		
+		/*container.mouseover(
+				  function () { // mouseenter
+					  var keys = newSet.children();
+					  for (i=0; i<keys.length-2; i++){
+						   keys[i].value = '*';
+					    }
+					  return false;
+				  });
+		newSet.mouseover(
+				function () { // mouseenter
+			  var keys = newSet.children();
+			  for (i=0; i<keys.length-2; i++){
+				   keys[i].value = '*';
+			    }
+			  return false;
+		  });*/
+		container.mouseleave(
+				  function () {  //mouseleave
+					  var keys = newSet.children();
+					  for (i=0; i<keys.length-2; i++){
+						  keys[i].value = keys[i].name;
+					    }
+					  return false;
+				    });
+		
+		
+		
+		
+		return contrasenaInput;
+	}
+		
+	agregar2 = function (keys, inputContrasena ,botones ,attach ){
+		
+		
+		for (var j=0; j<keys.length; j++){
+			keyBtn = $('<input />')
+			.attr({ 'value': keys[j] , 'id': 'boton', 'name': keys[j] , 'type':'button'})
+			//.attr( 'onclick','javascript:clickeado(this)')
+			.addClass('keyboard-button')
+			.show();
+			if (keys.length==1){
+				keyBtn.addClass('keyboard-widekey');
+				keyBtn.addClass('boton-borrar');
+				
+			}
+			keyBtn.mouseup(function(){
+			 	value = $(this).attr("name");
+			      if (value!= "Borrar"){
+				      pass = inputContrasena.val();
+				      if( pass == "undefined") pass ="";
+				      pass = pass.concat(value);
+				      inputContrasena.val(pass);
+			      }else if (value == "Borrar"){
+			    	  inputContrasena.val("");
+			      }else{
+			      return;
+			      }
+			    
+			      //buildKeyboardOnlyNumbers(true,attach, inputContrasena , false );
+			      return false;
+		   		})
+		   		.appendTo(botones);
+			if (j==keys.length-1 || j==keys.length-6){ // last
+				botones.append('<br />');
+				
+			}
+		}
+		return [botones, inputContrasena];
+	}
+	
+	
+		
+
+	
